@@ -1,0 +1,20 @@
+{
+  "name": "sv_employee data",
+  "version": "1.0.0",
+  "description": "sandv chat bot webhook url",
+  "main": "index.js",
+  "scripts": {
+    "test": "emp"
+  },
+  "keywords": [
+    "emp",
+    "details",
+    "emp"
+  ],
+  "author": "raga nimmala",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  }
+}
