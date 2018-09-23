@@ -4,7 +4,7 @@
   "description": "sandv chat bot webhook url",
   "main": "index.js",
   "scripts": {
-    "test": "emp"
+       "start": "node index.js"
   },
   "keywords": [
     "emp",
