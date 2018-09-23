@@ -59,6 +59,6 @@ server.post('/svempdetails', (req, res) => {
 });
 
 
-server.listen((process.env.PORT || 8000), () => {
+server.listen((process.env.PORT || 3000), () => {
     console.log("Server is up and running...");
 });
