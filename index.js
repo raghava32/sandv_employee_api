@@ -4,8 +4,6 @@ const bodyParser = require('body-parser');
 const http = require('http');
 
 
-var gv_var;
-
 
 const server = express();
 server.use(bodyParser.urlencoded({
@@ -38,8 +36,8 @@ server.post('/svempdetails', (req, res) => {
             for (var i = 0; i < JSONObj.d.results.length; i++) 
             {
             botResponse += " ";
-              botResponse +=  JSONObj.d.results[i].Empid +" "+ JSONObj.d.results[i].Empname;  
-			 
+              botResponse +=  JSONObj.d.results[i].Empname +" , From"+ JSONObj.d.results[i].Empadd +" .";  
+			  
 	           }
           } 
              
