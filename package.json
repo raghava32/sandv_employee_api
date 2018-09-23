@@ -1,5 +1,5 @@
 {
-  "name": "sv_employee data",
+  "name": "get-Employee-details",
   "version": "1.0.0",
   "description": "sandv chat bot webhook url",
   "main": "index.js",
