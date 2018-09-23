@@ -36,7 +36,7 @@ server.post('/svempdetails', (req, res) => {
             for (var i = 0; i < JSONObj.d.results.length; i++) 
             {
             botResponse += " ";
-              botResponse +=  JSONObj.d.results[i].Empname +" , From"+ JSONObj.d.results[i].Empadd +" .";  
+              botResponse +=  JSONObj.d.results[i].Empname +" , From "+ JSONObj.d.results[i].Empadd +" .";  
 			  
 	           }
           } 
