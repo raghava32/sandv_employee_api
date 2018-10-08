@@ -15,7 +15,7 @@ server.use(bodyParser.json());
 server.post('/svempdetails', (req, res) => {
 
     const movieToSearch = req.body.result && req.body.result.parameters && req.body.result.parameters.movie ? req.body.result.parameters.movie : 'The Godfather';
-    const reqUrl = encodeURI(`http://svsoftappdev.sandv.biz:8000/sap/opu/odata/SAP/ZMDG_FIAA_ASSET_SRV/CRequestSet?$format=json`);
+    const reqUrl = encodeURI(`http://10.242.212.80:8000/sap/opu/odata/SAP/ZMDG_FIAA_ASSET_SRV/CRequestSet?$format=json`);
     http.get(reqUrl, (responseFromAPI) => {
         let completeResponse = '';
         responseFromAPI.on('data', (chunk) => {
