@@ -2,12 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const http = require('http');
 
-var xheaders = {};
-xheaders["Authorization"] = 'Basic cm5pbW1hbGE6Um5pbW1hbGEyMDE5';
-
-
-
-				console.log('hello')
 
 const server = express();
 server.use(bodyParser.urlencoded({
@@ -44,7 +38,8 @@ console.log('emp details')
               botResponse +=  "UsmdCrequest:- "+JSONObj.d.results[i].UsmdCrequest +"UsmdCreqType:- "+ JSONObj.d.results[i].UsmdCreqType +" .";  
 			  
 	           }
-          } 
+console.log(botResponse)
+	  } 
              
             return res.json({
                 speech: botResponse,//dataToSend,
