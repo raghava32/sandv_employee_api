@@ -15,7 +15,7 @@ server.use(bodyParser.json());
 server.post('/svempdetails', (req, res) => {
 
     const movieToSearch = req.body.result && req.body.result.parameters && req.body.result.parameters.movie ? req.body.result.parameters.movie : 'The Godfather';
-    const reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMM_EMP_SRV_01/EmployeeSet?$format=json`);
+    const reqUrl = encodeURI(`http://svsoftappdev.sandv.biz:8000/sap/opu/odata/SAP/ZMDG_FIAA_ASSET_SRV/CRequestSet?$format=json`);
     http.get(reqUrl, (responseFromAPI) => {
         let completeResponse = '';
         responseFromAPI.on('data', (chunk) => {
@@ -25,6 +25,7 @@ server.post('/svempdetails', (req, res) => {
         responseFromAPI.on('end', () => {
             var JSONObj = JSON.parse(completeResponse);
         
+		
             let botResponse ;
             /// = movieToSearch === 'The Godfather' ? `I don't have the required info on that. Here's some info on 'The Godfather' instead.\n` : '';
          var JSONObj = JSON.parse(completeResponse);
@@ -36,11 +37,11 @@ server.post('/svempdetails', (req, res) => {
             for (var i = 0; i < JSONObj.d.results.length; i++) 
             {
             botResponse += " ";
-              botResponse +=  JSONObj.d.results[i].Empname +" , From "+ JSONObj.d.results[i].Empadd +" .";  
-			  
+              botResponse +=  "ChangeReq:-"+JSONObj.d.results[i].UsmdCrequest +" ,UsmdCreqType:- "+ JSONObj.d.results[i].UsmdCreqType +" .";  
+		        				 
 	           }
           } 
-             
+            console.log(botResponse) 
             return res.json({
                 speech: botResponse,//dataToSend,
                 displayText: botResponse,
