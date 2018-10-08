@@ -2,7 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const http = require('http');
 
+var xheaders = {};
+xheaders["Authorization"] = 'Basic cm5pbW1hbGE6Um5pbW1hbGEyMDE5';
 
+
+
+				console.log('hello')
 
 const server = express();
 server.use(bodyParser.urlencoded({
@@ -12,16 +17,15 @@ server.use(bodyParser.urlencoded({
 server.use(bodyParser.json());
 
 server.post('/svempdetails', (req, res) => {
-
+console.log('emp details')
     const movieToSearch = req.body.result && req.body.result.parameters && req.body.result.parameters.movie ? req.body.result.parameters.movie : 'The Godfather';
-    const reqUrl = encodeURI(`http://svsoftappdev.sandv.biz:8000/sap/opu/odata/SAP/ZMDG_FIAA_ASSET_SRV/CRequestSet?$format=json`);
+   const reqUrl = encodeURI(`http://10.242.212.80:8000/sap/opu/odata/SAP/ZMDG_FIAA_ASSET_SRV/CRequestSet?$format=json`);
     http.get(reqUrl,{
-    headers: {'Authorization': 'Basic cm5pbW1hbGE6Um5pbW1hbGEyMDE5'}
-}, (responseFromAPI) => {
+    headers: {'Authorization': 'Basic cm5pbW1hbGE6Um5pbW1hbGEyMDE5'} },   (responseFromAPI) => {
         let completeResponse = '';
         responseFromAPI.on('data', (chunk) => {
             completeResponse += chunk;
-            
+            			
         });
         responseFromAPI.on('end', () => {
             var JSONObj = JSON.parse(completeResponse);
