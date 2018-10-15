@@ -94,12 +94,7 @@ if  ( cr == "24");{
 	
    cr_response =  getObjects(js, 'UsmdCreqStatus','04');
 }
-elseif ( cr == "Priority CR");{
-cr_response =  getObjects(js, 'UsmdPriority','01');
-}
-elseif ( cr == "Latest CR");{
-cr_response =  getObjects(js, 'UsmdPriority','01');
-}
+
 
 
 //var name = cr_response[1];
