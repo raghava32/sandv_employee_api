@@ -103,18 +103,18 @@ console.log(req.body.queryResult);
 
 let cr_reslen = cr_response.length;
 
-console.log(cr_response.length);
+
   
-let text;
- let resp = "USMD CRequest :- ";
+
+ let text = "USMD CRequest :- ";
 for (let l = 0; l < cr_reslen; l++) {
 
- resp += "  " + cr_response[l].UsmdCrequest + ". ";
+ text += "  " + cr_response[l].UsmdCrequest + ". ";
    //text += " USMD CRequestSet :- " + cr_response[l].UsmdCrequest + ", ";
 }  
 
 
-console.log(resp);
+console.log(text);
 
 /*
 		///////////
@@ -136,8 +136,8 @@ console.log(resp);
           } */
             // console.log(botResponse);
             return res.json({
-                speech: resp,//dataToSend,
-                displayText: resp,
+                speech: text,//dataToSend,
+                displayText: text,
                 source: 'webhook-echo-sample'
             });
         });
