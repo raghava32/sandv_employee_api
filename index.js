@@ -11,7 +11,7 @@ server.use(bodyParser.urlencoded({
 
 server.use(bodyParser.json());
 
-server.post('/svempdetails', (req, res) => {
+server.post('/asset', (req, res) => {
 
  //const movieToSearch = req.body.result && req.body.result.parameters && req.body.result.parameters.movie ? req.body.result.parameters.movie : 'The Godfather';
     const reqUrl = encodeURI('http://80.227.35.222:50000/sap/opu/odata/SAP/ZMM_EMP_SRV_01/CRequestSet?$format=json');
@@ -86,59 +86,37 @@ var js = JSON.parse(completeResponse);
 let cr_response
 let reqparams = req.body.queryResult.parameters['CR_Details'];
 
-if ((req.body.queryResult.parameters['CR_Details']) == "Pending CR");{
+if  (reqparams == "Pending CR");{
 	
    cr_response =  getObjects(js, 'UsmdCreqStatus','04');
 }
-elseif ((req.body.queryResult.parameters['CR_Details']) == "Priority CR");{
+elseif (reqparams  == "Priority CR");{
 cr_response =  getObjects(js, 'UsmdPriority','01');
 }
-elseif ((req.body.queryResult.parameters['CR_Details']) == "Latest CR");{
+elseif (reqparams == "Latest CR");{
 cr_response =  getObjects(js, 'UsmdPriority','01');
 }
 
 
-console.log(req.body.queryResult);
 //var name = cr_response[1];
 //returns 1 object where a key names ID has the value SGML
 
-let cr_reslen = cr_response.length;
+
 
 console.log(cr_response.length);
   
 let text;
- let resp = "USMD CRequest :- ";
-for (let l = 0; l < cr_reslen; l++) {
+ let text = "USMD CRequest :- ";
+for (let l = 0; l < cr_response.length; l++) {
 
- resp += "  " + cr_response[l].UsmdCrequest + ". ";
+ text += "  " + cr_response[l].UsmdCrequest + ". ";
    //text += " USMD CRequestSet :- " + cr_response[l].UsmdCrequest + ", ";
 }  
 
 
-console.log(resp);
-
-/*
-		///////////
-            let botResponse ;
-            
-         var JSONObj = JSON.parse(completeResponse);
-	     //console.log(name);
-		 
-          if (JSONObj.d.results.length > 0) 
-          {
-            botResponse = "Employee Data :"
-			
-            for (var i = 0; i < JSONObj.d.results.length; i++) 
-            {
-            botResponse += " ";
-              botResponse +=  JSONObj.d.results[i].Empname +" , From "+ JSONObj.d.results[i].Empadd +" .";  
-			  
-	           }
-          } */
-            // console.log(botResponse);
             return res.json({
-                speech: resp,//dataToSend,
-                displayText: resp,
+                speech: text,//dataToSend,
+                displayText: text,
                 source: 'webhook-echo-sample'
             });
         });
