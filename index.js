@@ -87,10 +87,10 @@ let cr_response;
 let reqparams;
 
  const parameters = request.body.queryResult.parameters;
-var cr = parameters['CR_Details'];
+var cr = parameters['number'];
 
 console.log(parameters);
-if  ( cr == "Pending CR");{
+if  ( cr == "24");{
 	
    cr_response =  getObjects(js, 'UsmdCreqStatus','04');
 }
