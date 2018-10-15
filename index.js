@@ -83,8 +83,10 @@ var js = JSON.parse(completeResponse);
 //console.log(getObjects(js, 'UsmdCreqText','demo sv check notes'));
 
 
-let cr_response
-let reqparams = req.body.queryResult.parameters['CR_Details'];
+let cr_response;
+let reqparams;
+
+ reqparams = req.body.queryResult.parameters['CR_Details'];
 
 if  (reqparams == "Pending CR");{
 	
