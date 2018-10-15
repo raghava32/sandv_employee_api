@@ -86,8 +86,8 @@ var js = JSON.parse(completeResponse);
 let cr_response;
 let reqparams;
 
- reqparams = req.body.queryResult;
-console.log(req.body.queryResult);
+ const parameters = request.body.queryResult.parameters;
+console.log(parameters);
 if  ((req.body.queryResult.parameters['CR_Details']) == "Pending CR");{
 	
    cr_response =  getObjects(js, 'UsmdCreqStatus','04');
