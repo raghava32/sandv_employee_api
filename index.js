@@ -11,7 +11,7 @@ server.use(bodyParser.urlencoded({
 
 server.use(bodyParser.json());
 
-server.post('/asset', (req, res) => {
+server.post('/svempdetails', (req, res) => {
 
  //const movieToSearch = req.body.result && req.body.result.parameters && req.body.result.parameters.movie ? req.body.result.parameters.movie : 'The Godfather';
     const reqUrl = encodeURI('http://80.227.35.222:50000/sap/opu/odata/SAP/ZMM_EMP_SRV_01/CRequestSet?$format=json');
@@ -84,18 +84,19 @@ var js = JSON.parse(completeResponse);
 
 
 let cr_response
-cr_response =  getObjects(js, 'UsmdCreqStatus','04');
-/*if ((req.body.queryResult.parameters['']) == "Pending CR");{
+let reqparams = (req.body.queryResult.parameters['CR_Details'];
+
+if reqparams == "Pending CR");{
 	
    cr_response =  getObjects(js, 'UsmdCreqStatus','04');
 }
-elseif (req.body.queryResult.parameters['']) = "Priority CR";{
+elseif reqparams = "Priority CR";{
 cr_response =  getObjects(js, 'UsmdPriority','01');
 }
-elseif (req.body.queryResult.parameters['']) = "Latest CR";{
+elseif reqparams = "Latest CR";{
 cr_response =  getObjects(js, 'UsmdPriority','01');
 }
-*/
+
 
 console.log(req.body.queryResult);
 //var name = cr_response[1];
@@ -103,18 +104,18 @@ console.log(req.body.queryResult);
 
 let cr_reslen = cr_response.length;
 
-
+console.log(cr_response.length);
   
-
- let text = "USMD CRequest :- ";
+let text;
+ let resp = "USMD CRequest :- ";
 for (let l = 0; l < cr_reslen; l++) {
 
- text += "  " + cr_response[l].UsmdCrequest + ". ";
+ resp += "  " + cr_response[l].UsmdCrequest + ". ";
    //text += " USMD CRequestSet :- " + cr_response[l].UsmdCrequest + ", ";
 }  
 
 
-console.log(text);
+console.log(resp);
 
 /*
 		///////////
@@ -136,8 +137,8 @@ console.log(text);
           } */
             // console.log(botResponse);
             return res.json({
-                speech: text,//dataToSend,
-                displayText: text,
+                speech: resp,//dataToSend,
+                displayText: resp,
                 source: 'webhook-echo-sample'
             });
         });
