@@ -88,14 +88,14 @@ let reqparams;
 
  //reqparams = req.body.queryResult.parameters['CR_Details'];
 
-if  ((req.body.queryResult.parameter['CR_Details']) == "Pending CR");{
+if  ((req.body.queryResult.parameters['CR_Details']) == "Pending CR");{
 	
    cr_response =  getObjects(js, 'UsmdCreqStatus','04');
 }
-elseif ((req.body.queryResult.parameter['CR_Details']) == "Priority CR");{
+elseif ((req.body.queryResult.parameters['CR_Details']) == "Priority CR");{
 cr_response =  getObjects(js, 'UsmdPriority','01');
 }
-elseif ((req.body.queryResult.parameter['CR_Details']) == "Latest CR");{
+elseif ((req.body.queryResult.parameters['CR_Details']) == "Latest CR");{
 cr_response =  getObjects(js, 'UsmdPriority','01');
 }
 
