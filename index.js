@@ -84,7 +84,7 @@ var js = JSON.parse(completeResponse);
 
 
 let cr_response
-var reqparams = (req.body.queryResult.parameters['CR_Details'];
+let reqparams = req.body.queryResult.parameters['CR_Details'];
 
 if reqparams == "Pending CR");{
 	
