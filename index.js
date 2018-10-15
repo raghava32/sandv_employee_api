@@ -86,11 +86,11 @@ var js = JSON.parse(completeResponse);
 let cr_response;
 let reqparams;
 
- const parameters = req.body.queryResult.parameters;
-var cr = parameters['number'];
+// const parameters = req.body.queryResult.parameters;
+//var cr = parameters['number'];
+const parameters = req.body.queryResult.queryText;
 
-console.log(parameters);
-if  ( cr == "24");{
+if  ( parameters == "Latest CR");{
 	
    cr_response =  getObjects(js, 'UsmdCreqStatus','04');
 }
