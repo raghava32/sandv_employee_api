@@ -86,7 +86,7 @@ var js = JSON.parse(completeResponse);
 let cr_response;
 let reqparams;
 
- const parameters = request.body.queryResult.parameters;
+ const parameters = req.body.queryResult.parameters;
 var cr = parameters['number'];
 
 console.log(parameters);
