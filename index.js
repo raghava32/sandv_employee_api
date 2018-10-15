@@ -106,7 +106,7 @@ cr_response =  getObjects(js, 'UsmdPriority','01');
 console.log(cr_response.length);
   
 let text;
- let text = "USMD CRequest :- ";
+ text = "USMD CRequest :- ";
 for (let l = 0; l < cr_response.length; l++) {
 
  text += "  " + cr_response[l].UsmdCrequest + ". ";
