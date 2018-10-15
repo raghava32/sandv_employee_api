@@ -11,7 +11,7 @@ server.use(bodyParser.urlencoded({
 
 server.use(bodyParser.json());
 
-server.post('/svempdetails', (req, res) => {
+server.post('/asset', (req, res) => {
 
  //const movieToSearch = req.body.result && req.body.result.parameters && req.body.result.parameters.movie ? req.body.result.parameters.movie : 'The Godfather';
     const reqUrl = encodeURI('http://80.227.35.222:50000/sap/opu/odata/SAP/ZMM_EMP_SRV_01/CRequestSet?$format=json');
@@ -90,15 +90,15 @@ if reqparams == "Pending CR");{
 	
    cr_response =  getObjects(js, 'UsmdCreqStatus','04');
 }
-elseif reqparams = "Priority CR";{
+elseif reqparams == "Priority CR";{
 cr_response =  getObjects(js, 'UsmdPriority','01');
 }
-elseif reqparams = "Latest CR";{
+elseif reqparams == "Latest CR";{
 cr_response =  getObjects(js, 'UsmdPriority','01');
 }
 
 
-console.log(req.body.queryResult);
+console.log(req.body.queryResult + "raghav");
 //var name = cr_response[1];
 //returns 1 object where a key names ID has the value SGML
 
