@@ -87,15 +87,17 @@ let cr_response;
 let reqparams;
 
  const parameters = request.body.queryResult.parameters;
+var cr = parameters['CR_Details'];
+
 console.log(parameters);
-if  ((req.body.queryResult.parameters['CR_Details']) == "Pending CR");{
+if  ( cr == "Pending CR");{
 	
    cr_response =  getObjects(js, 'UsmdCreqStatus','04');
 }
-elseif ((req.body.queryResult.parameters['CR_Details']) == "Priority CR");{
+elseif ( cr == "Priority CR");{
 cr_response =  getObjects(js, 'UsmdPriority','01');
 }
-elseif ((req.body.queryResult.parameters['CR_Details']) == "Latest CR");{
+elseif ( cr == "Latest CR");{
 cr_response =  getObjects(js, 'UsmdPriority','01');
 }
 
