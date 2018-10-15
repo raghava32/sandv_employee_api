@@ -12,7 +12,7 @@ server.use(bodyParser.urlencoded({
 server.use(bodyParser.json());
 
 server.post('/asset', (req, res) => {
-
+let text;
  //const movieToSearch = req.body.result && req.body.result.parameters && req.body.result.parameters.movie ? req.body.result.parameters.movie : 'The Godfather';
     const reqUrl = encodeURI('http://80.227.35.222:50000/sap/opu/odata/SAP/ZMM_EMP_SRV_01/CRequestSet?$format=json');
     http.get(reqUrl, (responseFromAPI) => {
@@ -104,7 +104,7 @@ if  ( parameters == "Latest CR");{
 
 console.log(cr_response.length);
   
-let text;
+
  text = "USMD CRequest :- ";
 for (let l = 0; l < cr_response.length; l++) {
 
