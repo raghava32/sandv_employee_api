@@ -13,7 +13,7 @@ server.use(bodyParser.json());
 
 server.post('/assetdata', (req, res) => {
 
-   let botResponse ;
+   let botResponse = " ";
 	
 const num = req.body.result.parameters;
    //let num = req.body.queryResult.parameters['number'];
