@@ -14,14 +14,14 @@ server.use(bodyParser.json());
 server.post('/assetdata', (req, res) => {
 
    let botResponse ;
-	let cr_str;
+	//let cr_str;
  // const cr_sel = req.body.queryResult.queryText;
 	const cr_sel = req.body.queryResult.parameters['number'];
        switch (cr_sel)  
     { 
        case  '24'//'pending cr': 
 	    //cr_str = "'" + cr_sel + "'";
-		    cr_str = "'" + pend + "'";
+		 const  cr_str = "'" + pend + "'";
            botResponse = 'Pending Changerequest : ';
            break; 
        case 'priority cr': 
