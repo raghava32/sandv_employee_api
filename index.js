@@ -14,7 +14,7 @@ server.use(bodyParser.json());
 server.post('/assetdata', (req, res) => {
 
    let botResponse = " ";
-	const reqUrl = " ";
+	let reqUrl = "";
 const numb = req.body.result.parameters;
 	const num = numb["crdata"]
  switch(expression) {
