@@ -14,13 +14,13 @@ server.use(bodyParser.json());
 server.post('/assetdata', (req, res) => {
 
    let botResponse ;
-	const cr_str;
+	let cr_str;
  // const cr_sel = req.body.queryResult.queryText;
 	const cr_sel = req.body.queryResult.queryText.any;
        switch (cr_sel)  
     { 
        case 'pending cr': 
-		    cr_str = '+'+cr_sel+'+;
+		    cr_str = +'+cr_sel+'+;
            botResponse = 'Pending Changerequest : ';
            break; 
        case 'priority cr': 
@@ -39,7 +39,7 @@ server.post('/assetdata', (req, res) => {
 		
 		
    
-    const reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq ${cr_sel}&$format=json`);
+    const reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq ${cr_str}&$format=json`);
 	///sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pending cr'&$format=json
 	//const reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pending cr'&$format=json`);
 		
