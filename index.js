@@ -19,9 +19,9 @@ server.post('/assetdata', (req, res) => {
 	const cr_sel = req.body.queryResult.parameters['number'];
        switch (cr_sel)  
     { 
-       case  '24'//'pending cr': 
+	    case  '24':   //'pending cr': 
 	    //cr_str = "'" + cr_sel + "'";
-		 const  cr_str = "'" + pend + "'";
+		 var cr_str = "'" + pend + "'";
            botResponse = 'Pending Changerequest : ';
            break; 
        case 'priority cr': 
