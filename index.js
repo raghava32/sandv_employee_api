@@ -21,6 +21,8 @@ server.post('/assetdata', (req, res) => {
     { 
 	    case  '24':   //'pending cr': 
 	    //cr_str = "'" + cr_sel + "'";
+		    
+		    const reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pend'&$format=json`);
 		 var cr_str = "'" + pend + "'";
            botResponse = 'Pending Changerequest : ';
            break; 
@@ -43,7 +45,7 @@ server.post('/assetdata', (req, res) => {
 
 		
    
-    const reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq ${cr_str}&$format=json`);
+    //const reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq ${cr_str}&$format=json`);
 	///sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pending cr'&$format=json
 	//const reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pending cr'&$format=json`);
 		
