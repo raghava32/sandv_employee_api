@@ -17,7 +17,7 @@ server.post('/assetdata', (req, res) => {
 	let reqUrl = "";
 const numb = req.body.result.parameters;
 	const num = numb["crdata"]
- switch(expression) {
+ switch(num) {
     case 'pending cr':
       reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pend'&$format=json`);          
         break;
