@@ -59,7 +59,7 @@ const numb = req.body.result.parameters;
           } 
              console.log(botResponse);
             return res.json({
-                speech: num,     
+                speech: botResponse,     
                 displayText: botResponse,
                 source: 'webhook-echo-sample'
             });
