@@ -16,11 +16,12 @@ server.post('/assetdata', (req, res) => {
    let botResponse ;
 	let cr_str;
  // const cr_sel = req.body.queryResult.queryText;
-	const cr_sel = req.body.queryResult.parameters['any'];
+	const cr_sel = req.body.queryResult.parameters['number'];
        switch (cr_sel)  
     { 
-       case 'pending cr': 
-	    cr_str = "'" + cr_sel + "'";
+       case  '24'//'pending cr': 
+	    //cr_str = "'" + cr_sel + "'";
+		    cr_str = "'" + pend + "'";
            botResponse = 'Pending Changerequest : ';
            break; 
        case 'priority cr': 
