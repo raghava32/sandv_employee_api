@@ -20,16 +20,19 @@ server.post('/assetdata', (req, res) => {
        switch (cr_sel)  
     { 
        case 'pending cr': 
-		    cr_str = +'+cr_sel+'+;
+		    cr_str = "'" + cr_sel + "'"
            botResponse = 'Pending Changerequest : ';
            break; 
        case 'priority cr': 
+		    cr_str = "'" + cr_sel + "'"
            botResponse = 'Priority Changerequest : ';
            break; 
        case 'latest cr': 
+		    cr_str = "'" + cr_sel + "'"
            botResponse = 'Latest Changerequest : ';
            break; 
 	   case 'over due cr': 
+		    cr_str = "'" + cr_sel + "'"
            botResponse = 'Over Due cr Changerequest : ';
            break; 
        default: 
