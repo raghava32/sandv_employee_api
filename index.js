@@ -14,7 +14,8 @@ server.use(bodyParser.json());
 server.post('/assetdata', (req, res) => {
 
    let botResponse ;
-  const cr_sel = req.body.queryResult.queryText;
+ // const cr_sel = req.body.queryResult.queryText;
+	const cr_sel = req.body.queryResult.queryText.any;
        switch (cr_sel)  
     { 
        case 'pending cr': 
