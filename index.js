@@ -48,7 +48,7 @@ const num = req.body.result.parameters;
           } 
              console.log(botResponse);
             return res.json({
-                speech: num,     //botResponse,//dataToSend,
+                speech: num,     
                 displayText: botResponse,
                 source: 'webhook-echo-sample'
             });
