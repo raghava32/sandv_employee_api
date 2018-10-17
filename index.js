@@ -88,6 +88,7 @@ const numb = req.body.result.parameters;
 		     botResponse = bt_resp;  
 		      }
 		console.log(botResponse);
+		console.log("rag"+ req.body.result.parameters);
             return res.json(   
 		    
 		    if (bt_resp !== null){
