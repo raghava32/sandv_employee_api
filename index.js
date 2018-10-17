@@ -89,9 +89,7 @@ const numb = req.body.result.parameters;
               "Speech": botResponse
             }
           },
-          {
-            
-		  
+          {       	  
   "tableCard": {
     "title": "AoG Table Card title",
     "subtitle": "AoG Table Card subtitle",
@@ -164,15 +162,15 @@ const numb = req.body.result.parameters;
     ]
   }
 }
-  }
-}
+  
+}  );
 		    
 		    
 		    
 		    
 	    
 	    
-	    );
+	  
         });
     }, (error) => {
         return res.json({
