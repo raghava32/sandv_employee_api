@@ -72,20 +72,20 @@ const numb = req.body.result.parameters;
 		     cr_1d = JSONObj.d.results[i].UsmdCreqText;
 				   break;
 		     case 2:		   
-                     cr_2 = JSONObj.d.results[1].UsmdCrequest;
-		     cr_2d = JSONObj.d.results[1].UsmdCreqText;
+                     cr_2 = JSONObj.d.results[i].UsmdCrequest;
+		     cr_2d = JSONObj.d.results[i].UsmdCreqText;
 				   break;
                      case 3:				   
-                     cr_3 = JSONObj.d.results[2].UsmdCrequest;
-		     cr_3d = JSONObj.d.results[2].UsmdCreqText;
+                     cr_3 = JSONObj.d.results[i].UsmdCrequest;
+		     cr_3d = JSONObj.d.results[i].UsmdCreqText;
 				   break;
 		   case 4:		   
-                     cr_4 = JSONObj.d.results[3].UsmdCrequest;
-		     cr_4d = JSONObj.d.results[3].UsmdCreqText;
+                     cr_4 = JSONObj.d.results[i].UsmdCrequest;
+		     cr_4d = JSONObj.d.results[i].UsmdCreqText;
 				   break;
 		    case 5:		   
-                     cr_5 = JSONObj.d.results[4].UsmdCrequest;
-		     cr_5d = JSONObj.d.results[4].UsmdCreqText;
+                     cr_5 = JSONObj.d.results[i].UsmdCrequest;
+		     cr_5d = JSONObj.d.results[i].UsmdCreqText;
 				    break;
 		    }	
 	           }
@@ -137,14 +137,14 @@ const numb = req.body.result.parameters;
         },
         {
             "platform": "google",
-            "title": "Change Request List",
+            "title": num + "Change Request List",
             "type": "list_card",
             "items": [
                 {
                     "description": cr_1d,
                     "image": {
                         "accessibilityText": "Item 1 image fallback",
-                        "url": "http://image1.example.png"
+                        "url": "https://www.corelogs.com/media/images/thumbnails/logo233x233.png"
                     },
                     "optionInfo": {
                         "key": cr_1,
@@ -160,7 +160,7 @@ const numb = req.body.result.parameters;
                     "description": cr_2d,
                     "image": {
                         "accessibilityText": "Item 2 image fallback",
-                        "url": "http://image2.example.png"
+                        "url": "https://www.corelogs.com/media/images/thumbnails/logo233x233.png"
                     },
                     "optionInfo": {
                         "key": cr_2,
@@ -176,13 +176,13 @@ const numb = req.body.result.parameters;
                     "description": cr_3d,
                     "image": {
                         "accessibilityText": "Item 2 image fallback",
-                        "url": "http://image2.example.png"
+                        "url": "https://www.corelogs.com/media/images/thumbnails/logo233x233.png"
                     },
                     "optionInfo": {
                         "key": cr_3,
                         "synonyms": [
-                            "second",
-                            "number two", "two",
+                            "third",
+                            "number three", "three",
                             "bottom"
                         ]
                     },
@@ -191,14 +191,14 @@ const numb = req.body.result.parameters;
 		         {
                     "description": cr_4d,
                     "image": {
-                        "accessibilityText": "Item 2 image fallback",
-                        "url": "http://image2.example.png"
+                        "accessibilityText": "Item 3 image fallback",
+                        "url": "https://www.corelogs.com/media/images/thumbnails/logo233x233.png"
                     },
                     "optionInfo": {
                         "key": cr_4,
                         "synonyms": [
-                            "second",
-                            "number two", "two",
+                            "fourth",
+                            "number four", "four",
                             "bottom"
                         ]
                     },
