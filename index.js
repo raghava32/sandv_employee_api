@@ -19,7 +19,7 @@ const numb = req.body.result.parameters;
 	const num = numb["crdata"]
  switch(num) {
 	 case "cr details":
-	 case "cr data";
+	 case "cr data":
 	reqUrl = "please specifiy which type of cr data looking for. pending cr, latest cr, over due cr or priority cr";
 		 break;
     case "pending cr":
