@@ -21,10 +21,11 @@ const numb = req.body.result.parameters;
 	console.log(num);
  switch(num) {
 	 case "cr data":
+	bt_resp = "please specifiy which type of cr data looking for. pending cr, latest cr, over due cr or priority cr";
+		 break;
 	 case "cr details":
 	bt_resp = "please specifiy which type of cr data looking for. pending cr, latest cr, over due cr or priority cr";
-		 console.log(reqUrl);
-	break;
+    	break;
     case "pending cr":
       reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pend'&$format=json`);          
          break;
