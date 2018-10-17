@@ -80,42 +80,71 @@ const numb = req.body.result.parameters;
             return res.json(    
 
   {
-    "items": [
-      {
-        "description": "Item One Description",
-        "image": {
-          "url": "https://images.serenataassets.com/image/upload/f_auto,q_auto/t_Product290s/v1/Raw/108081_standing"
-          "accessibilityText": "Image description for screen readers"
+    "contextOut": [],
+    "data": {
+        "google": {
+            "expect_user_response": true,
+            "is_ssml": true,
+            "permissions_request": null
+        }
+    },
+    "messages": [
+        {
+            "speech": "Output speech",  # this is the message required Api.AI's web interface
+            "type": 0
         },
-        "optionInfo": {
-          "key": "itemOne",
-          "synonyms": [
-            "thing one",
-            "object one"
-          ]
+
+        # Below are the Actions Rich Messages
+        {
+            "displayText": "This is displayed on screen",
+            "platform": "google",
+            "textToSpeech": "Google Assistant speaks this",
+            "type": "simple_response"
         },
-        "title": "Item One"
-      },
-      {
-        "description": "Item Two Description",
-        "image": {
-          "url": "https://images.serenataassets.com/image/upload/f_auto,q_auto/t_Product290s/v1/Raw/108081_standing"
-          "accessibilityText": "Image description for screen readers"
-        },
-        "optionInfo": {
-          "key": "itemTwo",
-          "synonyms": [
-            "thing two",
-            "object two"
-          ]
-        },
-        "title": "Item Two"
-      }
+        {
+            "platform": "google",
+            "title": "Awesome List",
+            "type": "list_card"
+            "items": [
+                {
+                    "description": "Choose me for item 1",
+                    "image": {
+                        "accessibilityText": "Item 1 image fallback",
+                        "url": "http://image1.example.png"
+                    },
+                    "optionInfo": {
+                        "key": "item_one",  # sent to API.AI as query
+                        "synonyms": [
+                            "first",
+                            "number one", "one",
+                            "top"
+                        ]
+                    },
+                    "title": "Item One"  # sent to Actions as query
+                },
+                {
+                    "description": "Choose me for item 2",
+                    "image": {
+                        "accessibilityText": "Item 2 image fallback",
+                        "url": "http://image2.example.png"
+                    },
+                    "optionInfo": {
+                        "key": "item_two,  # sent to API.AI as query"
+                        "synonyms": [
+                            "second",
+                            "number two", "two",
+                            "bottom"
+                        ]
+                    },
+                    "title": "Item Two"  # sent to Actions as query
+                }
+            ]
+
+        }
     ],
-    "platform": "google",
-    "title": "Title",
-    "type": "list_card"
-  }
+    "source": "webhook",
+    "speech": "Output speech"
+}
 
 		    
 		    
