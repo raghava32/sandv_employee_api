@@ -94,7 +94,7 @@ const numb = req.body.result.parameters;
             "type": 0
         },
 
-        # Below are the Actions Rich Messages
+      
         {
             "displayText": "This is displayed on screen",
             "platform": "google",
