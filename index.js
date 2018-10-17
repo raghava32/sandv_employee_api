@@ -23,13 +23,12 @@ const numb = req.body.result.parameters;
 	console.log(num);
  switch(num) {
 	 case "cr data":
-	bt_resp = "please specifiy which type of cr data looking for. pending cr, latest cr, over due cr or priority cr";
-	reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pend'&$format=json`);          
-		 break;
+	 case "change request data":
 	 case "cr details":
+	 case "change request details":	 
 	bt_resp = "please specifiy which type of cr data looking for. pending cr, latest cr, over due cr or priority cr";
-    	reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pend'&$format=json`);          
-		 break;
+	reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$format=json`);          
+             break;	
     case "pending cr":
       reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pend'&$format=json`);          
          break;
@@ -89,7 +88,17 @@ const numb = req.body.result.parameters;
 		     botResponse = bt_resp;  
 		      }
 		console.log(botResponse);
-            return res.json(    
+            return res.json(   
+		    
+		    if (bt_resp !== null){
+	    { 
+                speech: botResponse,     
+                displayText: botResponse,
+                source: 'webhook-echo-sample'
+            }
+		    
+	    }
+		else{ 
 
  {
     "contextOut": [],
@@ -189,7 +198,7 @@ const numb = req.body.result.parameters;
     "speech": botResponse
 }
 		    
-		    
+		}//else condition
 		    
            );
 		    
