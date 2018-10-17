@@ -162,8 +162,8 @@ const numb = req.body.result.parameters;
     ]
   }
 }
-  
-}  );
+  }
+}  }});
 		    
 		    
 		    
