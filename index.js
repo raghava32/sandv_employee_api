@@ -90,7 +90,7 @@ const numb = req.body.result.parameters;
     },
     "messages": [
         {
-            "speech": "Output speech",  # this is the message required Api.AI's web interface
+            speech: "Output speech",  # this is the message required Api.AI's web interface
             "type": 0
         },
 
