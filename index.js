@@ -129,7 +129,7 @@ const numb = req.body.result.parameters;
                         "url": "http://image2.example.png"
                     },
                     "optionInfo": {
-                        "key": "item_two,
+                        "key": "item_two",
                         "synonyms": [
                             "second",
                             "number two", "two",
@@ -142,8 +142,8 @@ const numb = req.body.result.parameters;
 
         }
     ],
-    "source": "webhook",
-    "speech": "Output speech"
+    source: 'webhook-echo-sample',
+    "speech": botResponse
 }
 		    
 		    
