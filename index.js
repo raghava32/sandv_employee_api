@@ -18,6 +18,8 @@ server.post('/assetdata', (req, res) => {
 const numb = req.body.result.parameters;
 	const num = numb["crdata"]
  switch(num) {
+	 case "cr details" or "cr details":
+	reqUrl = "please specifiy which type of cr data looking for. pending cr, latest cr, over due cr or priority cr"	 
     case "pending cr":
       reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pend'&$format=json`);          
         break;
@@ -62,7 +64,7 @@ const numb = req.body.result.parameters;
 		     botResponse = "no data found for the request"
 	     }
             return res.json({ 
-                speech: botResponse,     
+                speech: reqUrl,     
                 displayText: botResponse,
                 source: 'webhook-echo-sample'
             });
