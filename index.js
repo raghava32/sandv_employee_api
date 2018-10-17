@@ -104,7 +104,7 @@ const numb = req.body.result.parameters;
         {
             "platform": "google",
             "title": "Awesome List",
-            "type": "list_card"
+            "type": "list_card",
             "items": [
                 {
                     "description": "Choose me for item 1",
