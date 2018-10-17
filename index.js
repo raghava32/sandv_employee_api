@@ -90,7 +90,7 @@ const numb = req.body.result.parameters;
 		console.log(botResponse);
 		console.log("rag"+ req.body.result.parameters);
 		
-		if if (bt_resp.length > 1 ){ 
+		if (bt_resp.length > 1 ){ 
 			      return res.json( 
 				  { 
                 speech: botResponse,     
