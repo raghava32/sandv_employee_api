@@ -103,8 +103,7 @@ const numb = req.body.result.parameters;
           },
           {
             "text": "Cell A3"
-          },
-          
+          },   
         ]
       },
       {
