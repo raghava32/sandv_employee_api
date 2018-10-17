@@ -79,7 +79,7 @@ const numb = req.body.result.parameters;
 		console.log(botResponse);
             return res.json(    
 
-  {
+ {
     "contextOut": [],
     "data": {
         "google": {
@@ -90,7 +90,7 @@ const numb = req.body.result.parameters;
     },
     "messages": [
         {
-            speech: "Output speech",  # this is the message required Api.AI's web interface
+            "speech": botResponse,
             "type": 0
         },
 
@@ -113,14 +113,14 @@ const numb = req.body.result.parameters;
                         "url": "http://image1.example.png"
                     },
                     "optionInfo": {
-                        "key": "item_one",  # sent to API.AI as query
+                        "key": "item_one",
                         "synonyms": [
                             "first",
                             "number one", "one",
                             "top"
                         ]
                     },
-                    "title": "Item One"  # sent to Actions as query
+                    "title": "Item One"
                 },
                 {
                     "description": "Choose me for item 2",
@@ -129,14 +129,14 @@ const numb = req.body.result.parameters;
                         "url": "http://image2.example.png"
                     },
                     "optionInfo": {
-                        "key": "item_two,  # sent to API.AI as query"
+                        "key": "item_two,
                         "synonyms": [
                             "second",
                             "number two", "two",
                             "bottom"
                         ]
                     },
-                    "title": "Item Two"  # sent to Actions as query
+                    "title": "Item Two"
                 }
             ]
 
@@ -145,7 +145,6 @@ const numb = req.body.result.parameters;
     "source": "webhook",
     "speech": "Output speech"
 }
-
 		    
 		    
 		    
