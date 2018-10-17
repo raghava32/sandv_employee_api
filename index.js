@@ -17,14 +17,16 @@ server.post('/assetdata', (req, res) => {
 	let reqUrl = "";
 const numb = req.body.result.parameters;
 	const num = numb["crdata"]
+	console.log(num);
  switch(num) {
 	 case "cr data":
 	 case "cr details":
 	reqUrl = "please specifiy which type of cr data looking for. pending cr, latest cr, over due cr or priority cr";
+		 console.log(reqUrl);
 	break;
     case "pending cr":
       reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pend'&$format=json`);          
-        break;
+         break;
     case "latest cr":
       reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'late'&$format=json`);   
         break;
