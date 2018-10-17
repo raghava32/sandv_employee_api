@@ -67,13 +67,12 @@ const numb = req.body.result.parameters;
 		
 		
              if (botResponse.length < 0)
-	     {
-		      if (bt_resp.length > 1){
-		     botResponse = bt_resp;  
-		      }
-		      
+	     {		    		      
 		     botResponse = "no data found for the request";
 	     }
+		  if (bt_resp.length > 1){
+		     botResponse = bt_resp;  
+		      }
             return res.json({ 
                 speech: botResponse,     
                 displayText: botResponse,
