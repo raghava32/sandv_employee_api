@@ -93,7 +93,7 @@ const numb = req.body.result.parameters;
 		
 		
 		
-		if (cr_1 < 0){
+		if (cr_1 < 0) {
 		cr_1 = "  ";
 		cr_1d = "  "	
 		}
