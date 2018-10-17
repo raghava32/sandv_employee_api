@@ -57,8 +57,11 @@ const numb = req.body.result.parameters;
 			  
 	           }
           } 
-             console.log(botResponse);
-            return res.json({
+             if (botResponse.length < 0)
+	     {
+		     botResponse = "no data found for the request"
+	     }
+            return res.json({ 
                 speech: botResponse,     
                 displayText: botResponse,
                 source: 'webhook-echo-sample'
