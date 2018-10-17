@@ -59,23 +59,35 @@ const numb = req.body.result.parameters;
 	     
           if (JSONObj.d.results.length > 0) 
           {
-            	     cr_1 = JSONObj.d.results[0].UsmdCrequest;
-		     cr_1d = JSONObj.d.results[0].UsmdCreqText
-                     cr_2 = JSONObj.d.results[1].UsmdCrequest;
-		     cr_2d = JSONObj.d.results[1].UsmdCreqText
-                     cr_3 = JSONObj.d.results[2].UsmdCrequest;
-		     cr_3d = JSONObj.d.results[2].UsmdCreqText
-                     cr_4 = JSONObj.d.results[3].UsmdCrequest;
-		     cr_4d = JSONObj.d.results[3].UsmdCreqText
-                     cr_5 = JSONObj.d.results[4].UsmdCrequest;
-		     cr_5d = JSONObj.d.results[4].UsmdCreqText	
-		  
+            	   	  
 		  
             for (var i = 0; i < JSONObj.d.results.length; i++) 
             {
             botResponse += " ";
               botResponse +=  JSONObj.d.results[i].UsmdCrequest +" "+" .";  
-		     
+		    switch(i) 
+		   { 
+                    case 1: 
+	             cr_1 = JSONObj.d.results[i].UsmdCrequest;
+		     cr_1d = JSONObj.d.results[i].UsmdCreqText;
+				   break;
+		     case 2:		   
+                     cr_2 = JSONObj.d.results[1].UsmdCrequest;
+		     cr_2d = JSONObj.d.results[1].UsmdCreqText;
+				   break;
+                     case 3:				   
+                     cr_3 = JSONObj.d.results[2].UsmdCrequest;
+		     cr_3d = JSONObj.d.results[2].UsmdCreqText;
+				   break;
+		   case 4:		   
+                     cr_4 = JSONObj.d.results[3].UsmdCrequest;
+		     cr_4d = JSONObj.d.results[3].UsmdCreqText;
+				   break;
+		    case 5:		   
+                     cr_5 = JSONObj.d.results[4].UsmdCrequest;
+		     cr_5d = JSONObj.d.results[4].UsmdCreqText;
+				    break;
+		    }	
 	           }
           } 
 		
