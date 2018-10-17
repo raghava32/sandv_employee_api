@@ -20,7 +20,7 @@ server.post('/assetdata', (req, res) => {
 	let bt_resp = "";
 const numb = req.body.result.parameters;
 	const num = numb["crdata"]
-	console.log(num);
+	//console.log(num);
  switch(num) {
 	 case "cr data":
 	 case "change request data":
@@ -46,7 +46,7 @@ const numb = req.body.result.parameters;
 	///sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pending cr'&$format=json
 	//const reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pending cr'&$format=json`);
 		
-	console.log(reqUrl);
+	//console.log(reqUrl);
     http.get(reqUrl, (responseFromAPI) => {
         let completeResponse = '';
         responseFromAPI.on('data', (chunk) => {
@@ -121,12 +121,13 @@ const numb = req.body.result.parameters;
 		  if (bt_resp.length > 1){
 		     botResponse = bt_resp;  
 		      }
-		console.log(botResponse);
-		console.log("rag"+ req.body.result.parameters);
-		console.log(cr_1);
-		console.log(cr_2);
-		console.log(cr_3);
-		console.log(cr_4);
+		//console.log(botResponse);
+		console.log("rag"+ num);
+		console.log(numb);
+		//console.log(cr_1);
+		//console.log(cr_2);
+		//console.log(cr_3);
+		//console.log(cr_4);
 		
 		
 		if (bt_resp.length > 1 ){ 
@@ -202,7 +203,7 @@ const numb = req.body.result.parameters;
 		     {
                     "description": cr_3d,
                     "image": {
-                        "accessibilityText": "Item 2 image fallback",
+                        "accessibilityText": "Item 3 image fallback",
                         "url": "https://www.corelogs.com/media/images/thumbnails/logo233x233.png"
                     },
                     "optionInfo": {
@@ -218,7 +219,7 @@ const numb = req.body.result.parameters;
 		         {
                     "description": cr_4d,
                     "image": {
-                        "accessibilityText": "Item 3 image fallback",
+                        "accessibilityText": "Item 4 image fallback",
                         "url": "https://www.corelogs.com/media/images/thumbnails/logo233x233.png"
                     },
                     "optionInfo": {
