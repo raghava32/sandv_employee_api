@@ -12,7 +12,9 @@ server.use(bodyParser.urlencoded({
 server.use(bodyParser.json());
 
 server.post('/assetdata', (req, res) => {
-
+  let cr_1,cr_2,cr_3,cr_4,cr_5,cr_1d,cr_2d,cr_3d,cr_4d,cr_5d;
+ 
+   
    let botResponse = " ";
 	let reqUrl = "";
 	let bt_resp = "";
@@ -58,13 +60,23 @@ const numb = req.body.result.parameters;
 	     
           if (JSONObj.d.results.length > 0) 
           {
-			 
-            		
+            	     cr_1 = JSONObj.d.results[0].UsmdCrequest;
+		     cr_1d = JSONObj.d.results[0].UsmdCreqText
+                     cr_2 = JSONObj.d.results[1].UsmdCrequest;
+		     cr_2d = JSONObj.d.results[1].UsmdCreqText
+                     cr_3 = JSONObj.d.results[2].UsmdCrequest;
+		     cr_3d = JSONObj.d.results[2].UsmdCreqText
+                     cr_4 = JSONObj.d.results[3].UsmdCrequest;
+		     cr_4d = JSONObj.d.results[3].UsmdCreqText
+                     cr_5 = JSONObj.d.results[4].UsmdCrequest;
+		     cr_5d = JSONObj.d.results[4].UsmdCreqText	
+		  
+		  
             for (var i = 0; i < JSONObj.d.results.length; i++) 
             {
             botResponse += " ";
               botResponse +=  JSONObj.d.results[i].UsmdCrequest +" "+" .";  
-			  
+		     
 	           }
           } 
 		
@@ -106,53 +118,69 @@ const numb = req.body.result.parameters;
             "type": "list_card",
             "items": [
                 {
-                    "description": "Choose me for item 1",
+                    "description": cr_1d,
                     "image": {
                         "accessibilityText": "Item 1 image fallback",
                         "url": "http://image1.example.png"
                     },
                     "optionInfo": {
-                        "key": "item_one",
+                        "key": cr_1,
                         "synonyms": [
                             "first",
                             "number one", "one",
                             "top"
                         ]
                     },
-                    "title": "Item One"
+                    "title": cr_1
                 },
                 {
-                    "description": "Choose me for item 2",
+                    "description": cr_2d,
                     "image": {
                         "accessibilityText": "Item 2 image fallback",
                         "url": "http://image2.example.png"
                     },
                     "optionInfo": {
-                        "key": "item_two",
+                        "key": cr_2,
                         "synonyms": [
                             "second",
                             "number two", "two",
                             "bottom"
                         ]
                     },
-                    "title": "Item Two"
+                    "title": cr_2
                 },
 		     {
-                    "description": "Choose me for item 2",
+                    "description": cr_3d,
                     "image": {
                         "accessibilityText": "Item 2 image fallback",
                         "url": "http://image2.example.png"
                     },
                     "optionInfo": {
-                        "key": "item_two",
+                        "key": cr_3,
                         "synonyms": [
                             "second",
                             "number two", "two",
                             "bottom"
                         ]
                     },
-                    "title": "Item Two"
-                }
+                    "title": cr_3
+                },
+		         {
+                    "description": cr_4d,
+                    "image": {
+                        "accessibilityText": "Item 2 image fallback",
+                        "url": "http://image2.example.png"
+                    },
+                    "optionInfo": {
+                        "key": cr_4,
+                        "synonyms": [
+                            "second",
+                            "number two", "two",
+                            "bottom"
+                        ]
+                    },
+                    "title": cr_4
+                },
             ]
 
         }
