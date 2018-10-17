@@ -78,51 +78,68 @@ const numb = req.body.result.parameters;
 		      }
 		console.log(botResponse);
             return res.json(
-            {
-  "tableCard": {
-    "title": "MDG taxnomy",
-    "subtitle": "SADNV MDG Test",
-    "image": {
-      "url": "https://images.pexels.com/photos/462118/pexels-photo-462118.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "accessibilityText": "Image description for screen readers"
-    },
-    "columnProperties": [
-      {
-        "header": "Change Request"
-      },
-      
-    ],
-    "rows": [
-      {
-        "cells": [
+           {
+  "payload": {
+    "google": {
+      "expectUserResponse": true,
+      "richResponse": {
+        "items": [
           {
-            "text": "Cell A1"
+            "simpleResponse": {
+              "textToSpeech": botResponse
+            }
           },
           {
-            "text": "Cell A2"
-          },
-          {
-            "text": "Cell A3"
-          },   
-        ]
-      },
-      {
-        "cells": [
-          {
-            "text": "Cell B1"
-          },
-          {
-            "text": "Cell B2"
-          },
-          {
-            "text": "Cell B3"
+            "tableCard": {
+              "rows": [
+                {
+                  "cells": [
+                    {
+                      "text": "row 1 item 1"
+                    },
+                    {
+                      "text": "row 1 item 2"
+                    },
+                    {
+                      "text": "row 1 item 3"
+                    }
+                  ],
+                  "dividerAfter": true
+                },
+                {
+                  "cells": [
+                    {
+                      "text": "row 2 item 1"
+                    },
+                    {
+                      "text": "row 2 item 2"
+                    },
+                    {
+                      "text": "row 2 item 3"
+                    }
+                  ],
+                  "dividerAfter": true
+                }
+              ],
+              "columnProperties": [
+                {
+                  "header": "header 1"
+                },
+                {
+                  "header": "header 2"
+                },
+                {
+                  "header": "header 3"
+                }
+              ]
+            }
           }
         ]
       },
-    ],
-  }
-}	    
  
+    }
+  }
+}
 		    
 		    
 		    
