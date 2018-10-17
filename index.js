@@ -91,7 +91,7 @@ const numb = req.body.result.parameters;
           },
           {
             
-		  {
+		  
   "tableCard": {
     "title": "AoG Table Card title",
     "subtitle": "AoG Table Card subtitle",
