@@ -97,15 +97,15 @@ const numb = req.body.result.parameters;
 		cr_1 = "  ";
 		cr_1d = "  "	
 		}
-		elseif (cr_2 < 0) {
+		else if (cr_2 < 0) {
 		cr_2 = "  ";
 		cr_2d = "  ";	
 		}
-		elseif (cr_3 < 0) {
+		else if (cr_3 < 0) {
 		cr_3 = "  ";
 		cr_3d = "  ";	
 		}
-		elseif (cr_4 < 0) {
+		else if (cr_4 < 0) {
 		cr_4 = "  ";
 		cr_4d = "  ";	
 		}
