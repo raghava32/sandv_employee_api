@@ -89,19 +89,20 @@ const numb = req.body.result.parameters;
 		      }
 		console.log(botResponse);
 		console.log("rag"+ req.body.result.parameters);
-            return res.json(   
-		    
-		    if (bt_resp){
-	    { 
+		
+		if if (bt_resp.length > 1 ){ 
+			      return res.json( 
+				  { 
                 speech: botResponse,     
                 displayText: botResponse,
                 source: 'webhook-echo-sample'
             }
-		    
-	    }
-		else{ 
-
- {
+                              );	
+		}
+		else{
+		return res.json( 
+                              
+{
     "contextOut": [],
     "data": {
         "google": {
@@ -197,12 +198,15 @@ const numb = req.body.result.parameters;
     ],
     source: 'webhook-echo-sample',
     "speech": botResponse
-}
-		    
-		}//else condition
-		    
-           );
-		    
+}			
+
+			
+							  
+							  
+			  );	
+		
+		}
+			  
 		    
 		    
 		    
