@@ -96,13 +96,16 @@ const numb = req.body.result.parameters;
 		if (cr_1 < 0){
 		cr_1 = "  ";
 		cr_1d = "  "	
-		}elseif (cr_2 < 0){
+		}
+		elseif (cr_2 < 0) {
 		cr_2 = "  ";
 		cr_2d = "  ";	
-		}elseif (cr_3 < 0){
+		}
+		elseif (cr_3 < 0) {
 		cr_3 = "  ";
 		cr_3d = "  ";	
-		}elseif (cr_4 < 0){
+		}
+		elseif (cr_4 < 0) {
 		cr_4 = "  ";
 		cr_4d = "  ";	
 		}
