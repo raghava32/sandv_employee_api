@@ -78,8 +78,8 @@ const numb = req.body.result.parameters;
 		      }
 		console.log(botResponse);
             return res.json(
-	    {
-  "Change Request data": {
+            {
+  "tableCard": {
     "title": "MDG taxnomy",
     "subtitle": "SADNV MDG Test",
     "image": {
@@ -96,8 +96,15 @@ const numb = req.body.result.parameters;
       {
         "cells": [
           {
-            "text": botResponse
-          },        
+            "text": "Cell A1"
+          },
+          {
+            "text": "Cell A2"
+          },
+          {
+            "text": "Cell A3"
+          },
+          "dividerAfter": true
         ]
       },
       {
@@ -115,7 +122,8 @@ const numb = req.body.result.parameters;
       },
     ],
   }
-}
+}	    
+ 
 		    
 		    
 		    
