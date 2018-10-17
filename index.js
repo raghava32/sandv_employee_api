@@ -77,9 +77,8 @@ const numb = req.body.result.parameters;
 		     botResponse = bt_resp;  
 		      }
 		console.log(botResponse);
-            return res.json(
-		    
-		   "messages": [
+            return res.json(    
+
   {
     "items": [
       {
@@ -117,7 +116,7 @@ const numb = req.body.result.parameters;
     "title": "Title",
     "type": "list_card"
   }
-]
+
 		    
 		    
 		    
