@@ -104,7 +104,7 @@ const numb = req.body.result.parameters;
           {
             "text": "Cell A3"
           },
-          "dividerAfter" = true
+          dividerAfter:  true
         ]
       },
       {
