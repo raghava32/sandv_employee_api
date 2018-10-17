@@ -86,7 +86,7 @@ const numb = req.body.result.parameters;
         "items": [
           {
             "simpleResponse": {
-              "textToSpeech": botResponse
+              "Speech": botResponse
             }
           },
           {
