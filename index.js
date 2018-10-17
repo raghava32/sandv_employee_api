@@ -15,13 +15,14 @@ server.post('/assetdata', (req, res) => {
 
    let botResponse = " ";
 	let reqUrl = "";
+	let bt_resp = "";
 const numb = req.body.result.parameters;
 	const num = numb["crdata"]
 	console.log(num);
  switch(num) {
 	 case "cr data":
 	 case "cr details":
-	reqUrl = "please specifiy which type of cr data looking for. pending cr, latest cr, over due cr or priority cr";
+	bt_resp = "please specifiy which type of cr data looking for. pending cr, latest cr, over due cr or priority cr";
 		 console.log(reqUrl);
 	break;
     case "pending cr":
@@ -63,12 +64,18 @@ const numb = req.body.result.parameters;
 			  
 	           }
           } 
+		
+		
              if (botResponse.length < 0)
 	     {
-		     botResponse = "no data found for the request"
+		      if (bt_resp.length > 1){
+		     botResponse = bt_resp;  
+		      }
+		      
+		     botResponse = "no data found for the request";
 	     }
             return res.json({ 
-                speech: reqUrl,     
+                speech: botResponse,     
                 displayText: botResponse,
                 source: 'webhook-echo-sample'
             });
