@@ -93,17 +93,16 @@ const numb = req.body.result.parameters;
             "speech": botResponse,
             "type": 0
         },
-
       
         {
-            "displayText": "This is displayed on screen",
+            "displayText": "MDG Bot",
             "platform": "google",
-            "textToSpeech": "Google Assistant speaks this",
-            "type": "simple_response"
+            "textToSpeech": botResponse,
+            "type": botResponse
         },
         {
             "platform": "google",
-            "title": "Awesome List",
+            "title": "Change Request List",
             "type": "list_card",
             "items": [
                 {
@@ -123,6 +122,22 @@ const numb = req.body.result.parameters;
                     "title": "Item One"
                 },
                 {
+                    "description": "Choose me for item 2",
+                    "image": {
+                        "accessibilityText": "Item 2 image fallback",
+                        "url": "http://image2.example.png"
+                    },
+                    "optionInfo": {
+                        "key": "item_two",
+                        "synonyms": [
+                            "second",
+                            "number two", "two",
+                            "bottom"
+                        ]
+                    },
+                    "title": "Item Two"
+                },
+		     {
                     "description": "Choose me for item 2",
                     "image": {
                         "accessibilityText": "Item 2 image fallback",
