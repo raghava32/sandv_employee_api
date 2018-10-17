@@ -91,7 +91,7 @@ const numb = req.body.result.parameters;
 		console.log("rag"+ req.body.result.parameters);
             return res.json(   
 		    
-		    if (bt_resp.length > 0){
+		    if (bt_resp){
 	    { 
                 speech: botResponse,     
                 displayText: botResponse,
