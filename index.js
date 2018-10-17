@@ -77,11 +77,59 @@ const numb = req.body.result.parameters;
 		     botResponse = bt_resp;  
 		      }
 		console.log(botResponse);
-            return res.json({ 
-                speech: botResponse,     
-                displayText: botResponse,
-                source: 'webhook-echo-sample'
-            });
+            return res.json(
+	    {
+  "tableCard": {
+    "title": "MDG taxnomy",
+    "subtitle": "SADNV MDG Test",
+    "image": {
+      "url": "https://images.pexels.com/photos/462118/pexels-photo-462118.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "accessibilityText": "Image description for screen readers"
+    },
+    "columnProperties": [
+      {
+        "header": "Change Request"
+      },
+      
+    ],
+    "rows": [
+      {
+        "cells": [
+          {
+            "text": botResponse
+          },
+          {
+            "text": "Cell A2"
+          },
+          {
+            "text": "Cell A3"
+          },
+          "dividerAfter": true
+        ]
+      },
+      {
+        "cells": [
+          {
+            "text": "Cell B1"
+          },
+          {
+            "text": "Cell B2"
+          },
+          {
+            "text": "Cell B3"
+          }
+        ]
+      },
+    ],
+  }
+}
+		    
+		    
+		    
+		    
+	    
+	    
+	    );
         });
     }, (error) => {
         return res.json({
