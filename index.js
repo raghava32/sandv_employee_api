@@ -73,6 +73,7 @@ const numb = req.body.result.parameters;
 		  if (bt_resp.length > 1){
 		     botResponse = bt_resp;  
 		      }
+		console.log(botResponse);
             return res.json({ 
                 speech: botResponse,     
                 displayText: botResponse,
