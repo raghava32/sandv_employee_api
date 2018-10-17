@@ -78,7 +78,7 @@ const numb = req.body.result.parameters;
 		      }
 		console.log(botResponse);
             return res.json(
-           {
+		    {
   "payload": {
     "google": {
       "expectUserResponse": true,
@@ -86,84 +86,95 @@ const numb = req.body.result.parameters;
         "items": [
           {
             "simpleResponse": {
-              "Speech": botResponse
+              "textToSpeech": "Simple Response"
             }
           },
-          {       	  
-  "tableCard": {
-    "title": "AoG Table Card title",
-    "subtitle": "AoG Table Card subtitle",
-    "image": {
-      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvvxkmJ-Iqk6VBfbUUxsoeY9BoVJJOgwJ0cF0UdV5CEhHgs6YW",
-      "accessibilityText": botResponse
-    },
-    "columnProperties": [
-      {
-        "header": "Header 1"
-      },
-      {
-        "header": "Header 2",
-        "horizontalAlignment": "CENTER"
-      },
-      {
-        "header": "Header 3",
-        "horizontalAlignment": "CENTER"
-      }
-    ],
-    "rows": [
-      {
-        "cells": [
           {
-            "text": "Cell A1"
-          },
-          {
-            "text": "Cell A2"
-          },
-          {
-            "text": "Cell A3"
-          },
-      
-        ]
-      },
-      {
-        "cells": [
-          {
-            "text": "Cell B1"
-          },
-          {
-            "text": "Cell B2"
-          },
-          {
-            "text": "Cell B3"
+            "tableCard": {
+              "title": "Table Title",
+              "subtitle": "Table Subtitle",
+              "image": {
+                "url": "https://avatars0.githubusercontent.com/u/23533486",
+                "accessibilityText": "Actions on Google"
+              },
+              "rows": [
+                {
+                  "cells": [
+                    {
+                      "text": "row 1 item 1"
+                    },
+                    {
+                      "text": "row 1 item 2"
+                    },
+                    {
+                      "text": "row 1 item 3"
+                    }
+                  ],
+                  "dividerAfter": false
+                },
+                {
+                  "cells": [
+                    {
+                      "text": "row 2 item 1"
+                    },
+                    {
+                      "text": "row 2 item 2"
+                    },
+                    {
+                      "text": "row 2 item 3"
+                    }
+                  ],
+                  "dividerAfter": true
+                },
+                {
+                  "cells": [
+                    {
+                      "text": "row 2 item 1"
+                    },
+                    {
+                      "text": "row 2 item 2"
+                    },
+                    {
+                      "text": "row 2 item 3"
+                    }
+                  ]
+                }
+              ],
+              "columnProperties": [
+                {
+                  "header": "header 1",
+                  "horizontalAlignment": "CENTER"
+                },
+                {
+                  "header": "header 2",
+                  "horizontalAlignment": "LEADING"
+                },
+                {
+                  "header": "header 3",
+                  "horizontalAlignment": "TRAILING"
+                }
+              ],
+              "buttons": [
+                {
+                  "title": "Button Title",
+                  "openUrlAction": {
+                    "url": "https://github.com/actions-on-google"
+                  }
+                }
+              ]
+            }
           }
         ]
       },
-      {
-        "cells": [
-          {
-            "text": "Cell C1"
-          },
-          {
-            "text": "Cell C2"
-          },
-          {
-            "text": "Cell C3"
-          }
-        ]
-      }
-    ],
-    "buttons": [
-      {
-        "title": "Button title",
-        "openUrlAction": {
-          "url": ""
-        }
-      }
-    ]
+      "userStorage": "{\"data\":{}}"
+    }
   }
 }
-  }
-}  }});
+		    
+		    
+		    
+		    
+           );
 		    
 		    
 		    
