@@ -67,23 +67,23 @@ const numb = req.body.result.parameters;
               botResponse +=  JSONObj.d.results[i].UsmdCrequest +" "+" .";  
 		    switch(i) 
 		   { 
-                    case 1: 
+                    case 0: 
 	             cr_1 = JSONObj.d.results[i].UsmdCrequest;
 		     cr_1d = JSONObj.d.results[i].UsmdCreqText;
 				   break;
-		     case 2:		   
+		     case 1:		   
                      cr_2 = JSONObj.d.results[i].UsmdCrequest;
 		     cr_2d = JSONObj.d.results[i].UsmdCreqText;
 				   break;
-                     case 3:				   
+                     case 2:				   
                      cr_3 = JSONObj.d.results[i].UsmdCrequest;
 		     cr_3d = JSONObj.d.results[i].UsmdCreqText;
 				   break;
-		   case 4:		   
+		   case 3:		   
                      cr_4 = JSONObj.d.results[i].UsmdCrequest;
 		     cr_4d = JSONObj.d.results[i].UsmdCreqText;
 				   break;
-		    case 5:		   
+		    case 4:		   
                      cr_5 = JSONObj.d.results[i].UsmdCrequest;
 		     cr_5d = JSONObj.d.results[i].UsmdCreqText;
 				    break;
@@ -94,20 +94,20 @@ const numb = req.body.result.parameters;
 		
 		
 		if (cr_1 < 0) {
-		cr_1 = "  ";
-		cr_1d = "  "	
+		cr_1 = "no data";
+		cr_1d = "no data"	
 		}
 		else if (cr_2 < 0) {
-		cr_2 = "  ";
-		cr_2d = "  ";	
+		cr_2 = "no data";
+		cr_2d = "no data";	
 		}
 		else if (cr_3 < 0) {
-		cr_3 = "  ";
-		cr_3d = "  ";	
+		cr_3 = "no data";
+		cr_3d = "no data";	
 		}
 		else if (cr_4 < 0) {
-		cr_4 = "  ";
-		cr_4d = "  ";	
+		cr_4 = "no data";
+		cr_4d = "no data";	
 		}
 		
 		
@@ -123,6 +123,11 @@ const numb = req.body.result.parameters;
 		      }
 		console.log(botResponse);
 		console.log("rag"+ req.body.result.parameters);
+		console.log(cr_1);
+		console.log(cr_2);
+		console.log(cr_3);
+		console.log(cr_4);
+		
 		
 		if (bt_resp.length > 1 ){ 
 			      return res.json( 
