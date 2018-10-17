@@ -21,8 +21,8 @@ server.post('/assetdata', (req, res) => {
 const numb = req.body.result.parameters;
 //const quer = req.body.result.query;	
 	const num = numb["crdata"];
-	const quer =numb["number"];
-	console.log("quer " +quer);
+	const quer = numb["number"];
+	console.log("quer " + quer);
  switch(num) {
 	 case "cr data":
 	 case "change request data":
