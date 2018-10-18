@@ -26,6 +26,7 @@ const numb = req.body.result.parameters;
 	console.log("quer " + quer);
 	console.log("num " + num);
 	if (num !== 'undefined') {
+		console.log("if exe");
  switch(num) {
 	 case "cr data":
 	 case "change request data":
@@ -51,6 +52,7 @@ const numb = req.body.result.parameters;
 	} //for if num.length cr data
 	
 	else { 
+		console.log("else if exe");
 	    reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval=${quer})?$format=json`);   
 	console.log(reqUrl);
 	}//end else if query cr number / activate cr
