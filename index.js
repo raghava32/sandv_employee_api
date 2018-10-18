@@ -102,16 +102,16 @@ console.log(reqUrl + "outside switch");
 		  
 		  else if (quer != null) {	  
 			  
-	             cr_1 = "Material :" + JSONObj.d.results[0].Matnr;
-		     cr_1d = "Desc:" + JSONObj.d.results[0].Txtmi;
-	             cr_2 =  "Noun :" + JSONObj.d.results[0].NounName;
-		     cr_2d = "Modifier :" + JSONObj.d.results[0].ModiName;   
-		     cr_3 = "Material Type :" + JSONObj.d.results[0].Mtart;
-		     cr_3d = "Material Group :" + JSONObj.d.results[0].Matkl;
-		     cr_4 = "Base UOM :" + JSONObj.d.results[0].Meins;
-                     cr_4d =  "Net Weight:" + JSONObj.d.results[0].Ntgew + JSONObj.d.results[0].GeweiMat;
-		     cr_5 = "Gross Weight: " + JSONObj.d.results[0].Brgewmara + JSONObj.d.results[0].GeweiMat;
-                     cr_5d = "Industry sector :" + JSONObj.d.results[0].Mbrsh
+	             cr_1 = "Material :" + JSONObj.d.Matnr;
+		     cr_1d = "Desc:" + JSONObj.d.Txtmi;
+	             cr_2 =  "Noun :" + JSONObj.d.NounName;
+		     cr_2d = "Modifier :" + JSONObj.d.ModiName;   
+		     cr_3 = "Material Type :" + JSONObj.dMtart;
+		     cr_3d = "Material Group :" + JSONObj.d.Matkl;
+		     cr_4 = "Base UOM :" + JSONObj.d.Meins;
+                     cr_4d =  "Net Weight:" + JSONObj.d.Ntgew + JSONObj.d.GeweiMat;
+		     cr_5 = "Gross Weight: " + JSONObj.d.Brgewmara + JSONObj.d.GeweiMat;
+                     cr_5d = "Industry sector :" + JSONObj.d.Mbrsh
 		 
 		  } //else if (quer.length >1) 
 		  
