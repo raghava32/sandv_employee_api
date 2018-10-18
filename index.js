@@ -19,10 +19,12 @@ server.post('/assetdata', (req, res) => {
 	let reqUrl = "";
 	let bt_resp = "";
 const numb = req.body.result.parameters;
-//const quer = req.body.result.query;	
+
+	
 	const num = numb["crdata"];
 	const quer = numb["number"];
 	console.log("quer " + quer);
+	if (num.length > 1) {
  switch(num) {
 	 case "cr data":
 	 case "change request data":
@@ -43,12 +45,16 @@ const numb = req.body.result.parameters;
     case "priority cr":
       reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'prio'&$format=json`);   
         break;			
-}
+}// switch case
 
-	///sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pending cr'&$format=json
-	//const reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pending cr'&$format=json`);
-		
-	//console.log(reqUrl);
+	} //for if num.length cr data
+	
+	else if (quer.length >1) { 
+	    reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval=${quer})?$format=json`);   
+	
+	}//end else if query cr number / activate cr
+	
+	
     http.get(reqUrl, (responseFromAPI) => {
         let completeResponse = '';
         responseFromAPI.on('data', (chunk) => {
@@ -62,7 +68,7 @@ const numb = req.body.result.parameters;
           if (JSONObj.d.results.length > 0) 
           {
             	   	  
-		  
+            if (num.length > 1) {
             for (var i = 0; i < JSONObj.d.results.length; i++) 
             {
             botResponse += " ";
@@ -91,6 +97,24 @@ const numb = req.body.result.parameters;
 				    break;
 		    }	
 	           }
+		    
+	    }// for if condition if (num.length > 1) 
+		  
+		  else if (quer.length >1) {	  
+			  
+	             cr_1 = "Material :" + JSONObj.d.results[0].Matnr;
+		     cr_1d = "Desc:"JSONObj.d.results[0].Txtmi;
+	             cr_2 =  "Noun :" + JSONObj.d.results[0].NounName;
+		     cr_2d = "Modifier :" +JSONObj.d.results[0].ModiName;   
+		     cr_3 = "Material Type :" + JSONObj.d.results[0].Mtart;
+		     cr_3d = "Material Group :" + JSONObj.d.results[0].Matkl;
+		     cr_4 = "Base UOM :" + JSONObj.d.results[0].Meins;
+                     cr_4d =  "Net Weight:" +JSONObj.d.results[0].Ntgew + JSONObj.d.results[0].GeweiMat;
+		     cr_5 = "Gross Weight: "+JSONObj.d.results[0].Brgewmara + JSONObj.d.results[0].GeweiMat;
+                     cr_5d = "Industry sector :"+ JSONObj.d.results[0].Mbrsh
+		 
+		  } //else if (quer.length >1) 
+		  
           } 
 		
 		
@@ -117,12 +141,12 @@ const numb = req.body.result.parameters;
 		     botResponse = bt_resp;  
 		      }
 		if (botResponse.length < 0)
-	     {		    		      
+	     {				      
 		     botResponse = "no data found for the request";
 	     }
 		
 					
-	if (bt_resp.length > 1 || botResponse.length < 0){ 
+	if (bt_resp.length > 1){ 
 	     return res.json( 
 				  { 
                 speech: botResponse,     
