@@ -111,29 +111,19 @@ const numb = req.body.result.parameters;
 		cr_4 = "no data";
 		cr_4d = "no data";	
 		}
-		
-		
-		
-		
-		
-             if (botResponse.length < 0)
-	     {		    		      
-		     botResponse = "no data found for the request";
-	     }
+			
+             
 		  if (bt_resp.length > 1){
 		     botResponse = bt_resp;  
 		      }
-		//console.log(botResponse);
-		console.log("rag"+ num);
-		console.log(numb);
-		//console.log(cr_1);
-		//console.log(cr_2);
-		//console.log(cr_3);
-		//console.log(cr_4);
+		if (botResponse.length < 0)
+	     {		    		      
+		     botResponse = "no data found for the request";
+	     }
 		
-		
-		if (bt_resp.length > 1 ){ 
-			      return res.json( 
+					
+	if (bt_resp.length > 1 || botResponse.length < 0){ 
+	     return res.json( 
 				  { 
                 speech: botResponse,     
                 displayText: botResponse,
