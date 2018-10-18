@@ -24,8 +24,8 @@ const numb = req.body.result.parameters;
 	const num = numb["crdata"];
 	const quer = numb["number"];
 	console.log("quer " + quer);
-	console.log("numb " + num);
-	if (num.length > 1) {
+	console.log("num " + num);
+	if (num !== 'undefined') {
  switch(num) {
 	 case "cr data":
 	 case "change request data":
