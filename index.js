@@ -48,7 +48,7 @@ const numb = req.body.result.parameters;
         break;			
 }// switch case
 
-	if (quer !== null) { 
+	if (quer === null) { 
 		console.log("else if exe");
 	    reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval=${quer})?$format=json`);   
 	console.log(reqUrl);
