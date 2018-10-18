@@ -65,10 +65,11 @@ console.log(reqUrl + "outside switch");
         responseFromAPI.on('end', () => {
             var JSONObj = JSON.parse(completeResponse);        
 	     
-          if (JSONObj.d.results.length > 0) 
-          {
+         
             	   	  
             if (num != null) {
+		     if (JSONObj.d.results.length > 0) 
+          {
             for (var i = 0; i < JSONObj.d.results.length; i++) 
             {
             botResponse += " ";
