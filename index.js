@@ -25,8 +25,7 @@ const numb = req.body.result.parameters;
 	const quer = numb["number"];
 	console.log("quer " + quer);
 	console.log("num " + num);
-	if (num !== null) {
-		console.log("if exe");
+	
  switch(num) {
 	 case "cr data":
 	 case "change request data":
@@ -48,10 +47,8 @@ const numb = req.body.result.parameters;
       reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'prio'&$format=json`);   
         break;			
 }// switch case
-console.log("switch case done");
-	} //for if num.length cr data
-	
-	else { 
+
+	if (quer !== null) { 
 		console.log("else if exe");
 	    reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval=${quer})?$format=json`);   
 	console.log(reqUrl);
