@@ -266,7 +266,7 @@ console.log(reqUrl + "outside switch");
 		    
 		    
 		    
-	    
+	num = quer = null;    
 	    
 	  
         });
