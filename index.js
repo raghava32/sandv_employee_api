@@ -101,9 +101,9 @@ console.log(reqUrl + "outside switch");
 	           }
 		    
 	    }// for if condition if (num.length > 1) 
-		  console.log("quer != null checking");
-		  else if (quer != null) {	  
-			  console.log("quer != null passed");
+		  //console.log("quer != null checking");
+		  else if  (quer != null) {	  
+			  console.log("quer null passed");
 	             cr_1 = "Material :" + JSONObj.d.Matnr;
 		     cr_1d = "Desc:" + JSONObj.d.Txtmi;
 	             cr_2 =  "Noun :" + JSONObj.d.NounName;
