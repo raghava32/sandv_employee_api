@@ -13,7 +13,7 @@ server.use(bodyParser.json());
 
 server.post('/assetdata', (req, res) => {
   let cr_1,cr_2,cr_3,cr_4,cr_5,cr_1d,cr_2d,cr_3d,cr_4d,cr_5d;
- 
+ let completeResponse = '';
    
    let botResponse = " ";
 	let reqUrl = "";
@@ -56,7 +56,7 @@ console.log(reqUrl + "outside switch");
 	
 	
     http.get(reqUrl, (responseFromAPI) => {
-        let completeResponse = '';
+        
         responseFromAPI.on('data', (chunk) => {
             completeResponse += chunk;
 			
