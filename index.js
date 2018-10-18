@@ -68,7 +68,7 @@ console.log(reqUrl + "outside switch");
           if (JSONObj.d.results.length > 0) 
           {
             	   	  
-            if (num.length > 1) {
+            if (num != null) {
             for (var i = 0; i < JSONObj.d.results.length; i++) 
             {
             botResponse += " ";
@@ -100,7 +100,7 @@ console.log(reqUrl + "outside switch");
 		    
 	    }// for if condition if (num.length > 1) 
 		  
-		  else if (quer.length >1) {	  
+		  else if (quer != null) {	  
 			  
 	             cr_1 = "Material :" + JSONObj.d.results[0].Matnr;
 		     cr_1d = "Desc:" + JSONObj.d.results[0].Txtmi;
