@@ -60,14 +60,15 @@ console.log(reqUrl + "outside switch");
         responseFromAPI.on('data', (chunk) => {
             completeResponse += chunk;
 			
-            console.log(completeResponse);
+            
         });
         responseFromAPI.on('end', () => {
             var JSONObj = JSON.parse(completeResponse);        
 	     
-         
-            	   	  
+         console.log(JSONObj);
+            	console.log("num != null checking");   	  
             if (num != null) {
+		    console.log("num != null executing");
 		     if (JSONObj.d.results.length > 0) 
           {
             for (var i = 0; i < JSONObj.d.results.length; i++) 
@@ -100,9 +101,9 @@ console.log(reqUrl + "outside switch");
 	           }
 		    
 	    }// for if condition if (num.length > 1) 
-		  
+		  console.log("quer != null checking");
 		  else if (quer != null) {	  
-			  console.log("quer != null executing");
+			  console.log("quer != null passed");
 	             cr_1 = "Material :" + JSONObj.d.Matnr;
 		     cr_1d = "Desc:" + JSONObj.d.Txtmi;
 	             cr_2 =  "Noun :" + JSONObj.d.NounName;
@@ -113,7 +114,7 @@ console.log(reqUrl + "outside switch");
                      cr_4d =  "Net Weight:" + JSONObj.d.Ntgew + JSONObj.d.GeweiMat;
 		     cr_5 = "Gross Weight: " + JSONObj.d.Brgewmara + JSONObj.d.GeweiMat;
                      cr_5d = "Industry sector :" + JSONObj.d.Mbrsh
-		 
+		 console.log("@@@@@@@@@@@");
 			  console.log(cr_1);
 			  console.log(cr_2);
 			  
