@@ -50,7 +50,7 @@ const numb = req.body.result.parameters;
 
 	} //for if num.length cr data
 	
-	else if (quer.length >1) { 
+	else { 
 	    reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval=${quer})?$format=json`);   
 	
 	}//end else if query cr number / activate cr
