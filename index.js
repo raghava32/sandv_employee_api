@@ -47,8 +47,8 @@ const numb = req.body.result.parameters;
       reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'prio'&$format=json`);   
         break;			
 }// switch case
-
-	if (quer === null) { 
+console.log(reqUrl + "outside switch");
+	if (quer != null) { 
 		console.log("else if exe");
 	    reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval=${quer})?$format=json`);   
 	console.log(reqUrl);
