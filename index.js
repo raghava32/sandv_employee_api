@@ -64,12 +64,10 @@ console.log(reqUrl + "outside switch");
         });
         responseFromAPI.on('end', () => {
             var JSONObj = JSON.parse(completeResponse);        
-	     
-         console.log(JSONObj);
-            	console.log("num != null checking");   	  
-            if (num != null) {
-		    console.log("num != null executing");
-		     if (JSONObj.d.results.length > 0) 
+     
+//switch(JSONObj) {
+		if (num != null) {
+ if (JSONObj.d.results.length > 0) 
           {
             for (var i = 0; i < JSONObj.d.results.length; i++) 
             {
@@ -99,8 +97,9 @@ console.log(reqUrl + "outside switch");
 				    break;
 		    }	
 	           }
-		    
-	    }// for if condition if (num.length > 1) 
+	  }	    
+		}
+	    // for if condition if (num.length > 1) 
 		  //console.log("quer != null checking");
 		 if (quer != null)  {	  
 			  console.log("quer null passed");
@@ -120,7 +119,7 @@ console.log(reqUrl + "outside switch");
 			  
 		  } //else if (quer.length >1) 
 		  
-          } 
+          
 		
 		
 		
