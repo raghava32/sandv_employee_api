@@ -60,7 +60,7 @@ console.log(reqUrl + "outside switch");
         responseFromAPI.on('data', (chunk) => {
             completeResponse += chunk;
 			
-            
+            console.log(completeResponse);
         });
         responseFromAPI.on('end', () => {
             var JSONObj = JSON.parse(completeResponse);        
