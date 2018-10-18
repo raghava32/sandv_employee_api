@@ -114,6 +114,9 @@ console.log(reqUrl + "outside switch");
 		     cr_5 = "Gross Weight: " + JSONObj.d.Brgewmara + JSONObj.d.GeweiMat;
                      cr_5d = "Industry sector :" + JSONObj.d.Mbrsh
 		 
+			  console.log(cr_1);
+			  console.log(cr_2);
+			  
 		  } //else if (quer.length >1) 
 		  
           } 
@@ -267,7 +270,7 @@ console.log(reqUrl + "outside switch");
 		    
 		    
 		    
-	num = quer = null;    
+	
 	    
 	  
         });
