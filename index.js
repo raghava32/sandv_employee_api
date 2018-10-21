@@ -13,21 +13,19 @@ server.use(bodyParser.json());
 
 server.post('/assetdata', (req, res) => {
   let cr_1,cr_2,cr_3,cr_4,cr_5,cr_1d,cr_2d,cr_3d,cr_4d,cr_5d;
-  let completeResponse = " ";
- let botResponse = "";
- let reqUrl = "";
- let bt_resp = ""; 
- let appr_reje = "";
+ let completeResponse = '';
    
-   
-const req_data = req.body.result.parameters;
-	const num = req_data["crdata"];
-	const quer = req_data["number"];
-	//const appr_rej = req_data['APPR'] // Approve or rej
+   let botResponse = " ";
+	let reqUrl = "";
+	let bt_resp = "";
+const numb = req.body.result.parameters;
+
 	
+	const num = numb["crdata"];
+	const quer = numb["number"];
+	console.log("quer " + quer);
+	console.log("num " + num);
 	
-	//const fina_ar = appr_rej + "."+ num;
-	//const fina_ar = appr_rej;
  switch(num) {
 	 case "cr data":
 	 case "change request data":
@@ -49,22 +47,12 @@ const req_data = req.body.result.parameters;
       reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'prio'&$format=json`);   
         break;			
 }// switch case
-
+console.log(reqUrl + "outside switch");
 	if (quer != null) { 
 		console.log("else if exe");
-	    reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval=${"'"+quer+"'"})?$format=json`);   
+	    reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval='6021')?$format=json`);   
 	console.log(reqUrl);
-	} 
-        // else if (fina_ar != null) {
-	//	console.log("exe fina_ar" + fina_ar);
-	//reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval=${"'"+fina_ar+"'"})?$format=json`);   
-	
-	//}
-	console.log("CR data num :- " +num);
-	console.log(reqUrl);
-	//console.log("fina_ar  :- " + fina_ar)
-	//console.log("APPROVE REJECT  :-" + appr_rej);
-	//end else if query cr number / activate cr
+	}//end else if query cr number / activate cr
 	
 	
     http.get(reqUrl, (responseFromAPI) => {
@@ -76,11 +64,10 @@ const req_data = req.body.result.parameters;
         });
         responseFromAPI.on('end', () => {
             var JSONObj = JSON.parse(completeResponse);        
-     console.log(bt_resp);
-     console.log("num  " + num);		
+     
 //switch(JSONObj) {
-		if (num != null && bt_resp == null) {
-            if (JSONObj.d.results.length > 0) 
+		if (num != null) {
+ if (JSONObj.d.results.length > 0) 
           {
             for (var i = 0; i < JSONObj.d.results.length; i++) 
             {
@@ -114,30 +101,28 @@ const req_data = req.body.result.parameters;
 		}
 	    // for if condition if (num.length > 1) 
 		  //console.log("quer != null checking");
-		 if
-		 (quer != null)  {	  
-			 console.log("quer null passed");
-	         cr_1 = "Material :" + JSONObj.d.Matnr;
+		 if (quer != null)  {	  
+			  console.log("quer null passed");
+	             cr_1 = "Material :" + JSONObj.d.Matnr;
 		     cr_1d = "Desc:" + JSONObj.d.Txtmi;
-	         cr_2 =  "Noun :" + JSONObj.d.NounName;
+	             cr_2 =  "Noun :" + JSONObj.d.NounName;
 		     cr_2d = "Modifier :" + JSONObj.d.ModiName;   
 		     cr_3 = "Material Type :" + JSONObj.dMtart;
 		     cr_3d = "Material Group :" + JSONObj.d.Matkl;
 		     cr_4 = "Base UOM :" + JSONObj.d.Meins;
-             cr_4d =  "Net Weight:" + JSONObj.d.Ntgew + JSONObj.d.GeweiMat;
+                     cr_4d =  "Net Weight:" + JSONObj.d.Ntgew + JSONObj.d.GeweiMat;
 		     cr_5 = "Gross Weight: " + JSONObj.d.Brgewmara + JSONObj.d.GeweiMat;
-             cr_5d = "Industry sector :" + JSONObj.d.Mbrsh
-		 
-      
+                     cr_5d = "Industry sector :" + JSONObj.d.Mbrsh
+		 console.log("@@@@@@@@@@@");
+			  console.log(cr_1);
+			  console.log(cr_2);
 			  
-		  } 
+		  } //else if (quer.length >1) 
 		  
-		  else if ( appr_rej != null ) { 
-		  
-		  botResponse =  JSONObj.d.Zfval;
-		  		  }
-		  	       
-	
+          
+		
+		
+		
 		if (cr_1 < 0) {
 		cr_1 = "no data";
 		cr_1d = "no data"	
@@ -165,7 +150,7 @@ const req_data = req.body.result.parameters;
 	     }
 		
 					
-	if (bt_resp.length > 1) { 
+	if (bt_resp.length > 1){ 
 	     return res.json( 
 				  { 
                 speech: botResponse,     
@@ -281,6 +266,13 @@ const req_data = req.body.result.parameters;
 			  );	
 		
 		}
+			  
+		    
+		    
+		    
+	
+	    
+	  
         });
     }, (error) => {
         return res.json({
