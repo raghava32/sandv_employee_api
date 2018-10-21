@@ -60,7 +60,8 @@ const req_data = req.body.result.parameters;
 	
 	}
 	
-	
+	console.log(reqUrl);
+	console.log("APPROVE REJECT  :-" + appr_rej);
 	//end else if query cr number / activate cr
 	
 	
