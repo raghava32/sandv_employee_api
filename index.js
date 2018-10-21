@@ -56,11 +56,13 @@ const req_data = req.body.result.parameters;
 	console.log(reqUrl);
 	} 
 	else if (fina_ar != null) {
+		console.log("exe fina_ar" + fina_ar);
 	reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval=${"'"+fina_ar+"'"})?$format=json`);   
 	
 	}
-	
+	console.log("CR data :- " +num);
 	console.log(reqUrl);
+	console.log("fina_ar  :- " + fina_ar)
 	console.log("APPROVE REJECT  :-" + appr_rej);
 	//end else if query cr number / activate cr
 	
