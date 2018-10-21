@@ -25,7 +25,7 @@ const quer = numb["number"];
 	
 	console.log("resolvedQuery :- " + res_query);
 	console.log("dtype :- "+ dtype);
-           console.log("entering into switch case" + dtype);
+        
 	if (dtype != null){ 
 	switch (dtype) {
 		 
@@ -55,18 +55,26 @@ console.log("latest :- "+ reqUrl);
 			break;		
 			default: 
 			reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pend'&$format=json`);        
-			console.log("default");
+	
 }// switch case
 
 		
 	}
-	console.log("dtype  after switch case:- "+ reqUrl);
-console.log("checking quer" + quer);
+	
+console.log("checking quer" + quer); //3418
 	if (quer != null) { 
-		console.log("else if exe");
+		
 	    reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval=${"'"+quer+"'"})?$format=json`);   
 	console.log("quer url for data :- "+ reqUrl);
 	}//end else if query cr number / activate cr
+	
+	
+	if (res_query.includes("approve") || res_query.includes("reject")){
+		
+		
+	    reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval=${"'"+res_query+"'"})?$format=json`);   
+	}
+	
 	
 	
     http.get(reqUrl, (responseFromAPI) => {
@@ -78,7 +86,7 @@ console.log("checking quer" + quer);
         responseFromAPI.on('end', () => {
             var JSONObj = JSON.parse(completeResponse);        
      
-console.log(JSONObj);
+
 		if (dtype != null && JSONObj != null ) {
  if (JSONObj.d.results.length > 0) 
           {
@@ -126,10 +134,8 @@ console.log(JSONObj);
                      cr_4d =  "Net Weight:" + JSONObj.d.Ntgew + JSONObj.d.GeweiMat;
 		     cr_5 = "Gross Weight: " + JSONObj.d.Brgewmara + JSONObj.d.GeweiMat;
                      cr_5d = "Industry sector :" + JSONObj.d.Mbrsh
-		 console.log("@@@@@@@@@@@");
-			  console.log(cr_1);
-			  console.log(cr_2);
-			  
+
+		  
 		  } //else if (quer.length >1) 
 		  
           
