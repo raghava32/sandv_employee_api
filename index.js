@@ -52,7 +52,7 @@ console.log(reqUrl);
 	
 	
     http.get(reqUrl, (responseFromAPI) => {
-        console.log( "http Call :-   "reqUrl);
+        console.log( "http Call :-  " + reqUrl);
         responseFromAPI.on('data', (chunk) => {
             completeResponse += chunk;
 			
