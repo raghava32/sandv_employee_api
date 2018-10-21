@@ -55,7 +55,7 @@ const req_data = req.body.result.parameters;
 	    reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval=${"'"+quer+"'"})?$format=json`);   
 	console.log(reqUrl);
 	} 
-	else if (fina_ar != null) {
+          if (fina_ar != null) {
 		console.log("exe fina_ar" + fina_ar);
 	reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval=${"'"+fina_ar+"'"})?$format=json`);   
 	
