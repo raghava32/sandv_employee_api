@@ -43,7 +43,7 @@ const quer = numb["number"];
       reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'prio'&$format=json`);   
         break;			
 }// switch case
-console.log(reqUrl + "outside switch");
+console.log(reqUrl);
 	if (quer != null) { 
 		console.log("else if exe");
 	    reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval='6021')?$format=json`);   
@@ -52,7 +52,7 @@ console.log(reqUrl + "outside switch");
 	
 	
     http.get(reqUrl, (responseFromAPI) => {
-        
+        console.log( "http Call :-   "reqUrl);
         responseFromAPI.on('data', (chunk) => {
             completeResponse += chunk;
 			
