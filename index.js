@@ -13,18 +13,16 @@ server.use(bodyParser.json());
 
 server.post('/assetdata', (req, res) => {
   let cr_1,cr_2,cr_3,cr_4,cr_5,cr_1d,cr_2d,cr_3d,cr_4d,cr_5d;
- let completeResponse = '';
+ let completeResponse,botResponse,reqUrl,bt_resp,appr_reje;
    
-   let botResponse = " ";
-	let reqUrl = "";
-	let bt_resp = "";
-const numb = req.body.result.parameters;
-
+   
+const req_data = req.body.result.parameters;
+	const num = req_data["crdata"];
+	const quer = req_data["number"];
+	const appr_rej = req_data['APPR'] // Approve or rej
 	
-	const num = numb["crdata"];
-	const quer = numb["number"];
-	console.log("quer " + quer);
-	console.log("num " + num);
+	
+	const fina_ar = appr_rej + "."+ num;
 	
  switch(num) {
 	 case "cr data":
@@ -34,7 +32,7 @@ const numb = req.body.result.parameters;
 	bt_resp = "please specifiy which type of cr data looking for. pending cr, latest cr, over due cr or priority cr";
 	reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$format=json`);          
              break;	
-    case "pending cr":
+    case "pending cr":
       reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pend'&$format=json`);          
          break;
     case "latest cr":
@@ -50,9 +48,16 @@ const numb = req.body.result.parameters;
 console.log(reqUrl + "outside switch");
 	if (quer != null) { 
 		console.log("else if exe");
-	    reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval='6021')?$format=json`);   
+	    reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval=${"'"+quer+"'"})?$format=json`);   
 	console.log(reqUrl);
-	}//end else if query cr number / activate cr
+	} 
+	else if (fina_ar != null) {
+	reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval=${"'"+fina_ar+"'"})?$format=json`);   
+	
+	}
+	
+	
+	//end else if query cr number / activate cr
 	
 	
     http.get(reqUrl, (responseFromAPI) => {
@@ -101,28 +106,30 @@ console.log(reqUrl + "outside switch");
 		}
 	    // for if condition if (num.length > 1) 
 		  //console.log("quer != null checking");
-		 if (quer != null)  {	  
-			  console.log("quer null passed");
-	             cr_1 = "Material :" + JSONObj.d.Matnr;
+		 if
+		 (quer != null)  {	  
+			 console.log("quer null passed");
+	         cr_1 = "Material :" + JSONObj.d.Matnr;
 		     cr_1d = "Desc:" + JSONObj.d.Txtmi;
-	             cr_2 =  "Noun :" + JSONObj.d.NounName;
+	         cr_2 =  "Noun :" + JSONObj.d.NounName;
 		     cr_2d = "Modifier :" + JSONObj.d.ModiName;   
 		     cr_3 = "Material Type :" + JSONObj.dMtart;
 		     cr_3d = "Material Group :" + JSONObj.d.Matkl;
 		     cr_4 = "Base UOM :" + JSONObj.d.Meins;
-                     cr_4d =  "Net Weight:" + JSONObj.d.Ntgew + JSONObj.d.GeweiMat;
+             cr_4d =  "Net Weight:" + JSONObj.d.Ntgew + JSONObj.d.GeweiMat;
 		     cr_5 = "Gross Weight: " + JSONObj.d.Brgewmara + JSONObj.d.GeweiMat;
-                     cr_5d = "Industry sector :" + JSONObj.d.Mbrsh
-		 console.log("@@@@@@@@@@@");
-			  console.log(cr_1);
-			  console.log(cr_2);
+             cr_5d = "Industry sector :" + JSONObj.d.Mbrsh
+		 
+      
 			  
-		  } //else if (quer.length >1) 
+		  } 
 		  
-          
-		
-		
-		
+		  else if ( appr_rej != null ) { 
+		  
+		  botResponse =  JSONObj.d.Zfval;
+		  		  }
+		  	       
+	
 		if (cr_1 < 0) {
 		cr_1 = "no data";
 		cr_1d = "no data"	
@@ -150,7 +157,7 @@ console.log(reqUrl + "outside switch");
 	     }
 		
 					
-	if (bt_resp.length > 1){ 
+	if (bt_resp.length > 1 || appr_reje.length > 1){ 
 	     return res.json( 
 				  { 
                 speech: botResponse,     
@@ -266,13 +273,6 @@ console.log(reqUrl + "outside switch");
 			  );	
 		
 		}
-			  
-		    
-		    
-		    
-	
-	    
-	  
         });
     }, (error) => {
         return res.json({
