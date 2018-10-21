@@ -70,8 +70,8 @@ console.log("dtype  after switch case:- "+ reqUrl);
         responseFromAPI.on('end', () => {
             var JSONObj = JSON.parse(completeResponse);        
      
-//switch(JSONObj) {
-		if (dtype != null && quer == null) {
+console.log(JSONObj);
+		if (dtype != null && JSONObj != null ) {
  if (JSONObj.d.results.length > 0) 
           {
             for (var i = 0; i < JSONObj.d.results.length; i++) 
