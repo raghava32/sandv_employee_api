@@ -23,6 +23,7 @@ const dtype = numb["crdata"];
 const quer = numb["number"];
 	console.log("dtype :- "+ dtype);
  switch(dtype) {
+		 connsole.log("entered into switch case" + dtype);
 	 case "cr data":
 	 case "change request data":
 	 case "cr details":
@@ -43,7 +44,7 @@ const quer = numb["number"];
       reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'prio'&$format=json`);   
         break;			
 }// switch case
-console.log("dtyoe :- "+ reqUrl);
+console.log("dtype  after switch case:- "+ reqUrl);
 	if (quer != null) { 
 		console.log("else if exe");
 	    reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval='6021')?$format=json`);   
