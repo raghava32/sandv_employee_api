@@ -26,8 +26,8 @@ const req_data = req.body.result.parameters;
 	const appr_rej = req_data['APPR'] // Approve or rej
 	
 	
-	const fina_ar = appr_rej + "."+ num;
-	
+	//const fina_ar = appr_rej + "."+ num;
+	const fina_ar = appr_rej;
  switch(num) {
 	 case "cr data":
 	 case "change request data":
@@ -55,7 +55,7 @@ const req_data = req.body.result.parameters;
 	    reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval=${"'"+quer+"'"})?$format=json`);   
 	console.log(reqUrl);
 	} 
-          if (fina_ar != null) {
+         else if (fina_ar != null) {
 		console.log("exe fina_ar" + fina_ar);
 	reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval=${"'"+fina_ar+"'"})?$format=json`);   
 	
