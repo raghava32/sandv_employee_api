@@ -23,11 +23,11 @@ server.post('/assetdata', (req, res) => {
 const req_data = req.body.result.parameters;
 	const num = req_data["crdata"];
 	const quer = req_data["number"];
-	const appr_rej = req_data['APPR'] // Approve or rej
+	//const appr_rej = req_data['APPR'] // Approve or rej
 	
 	
 	//const fina_ar = appr_rej + "."+ num;
-	const fina_ar = appr_rej;
+	//const fina_ar = appr_rej;
  switch(num) {
 	 case "cr data":
 	 case "change request data":
@@ -55,15 +55,15 @@ const req_data = req.body.result.parameters;
 	    reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval=${"'"+quer+"'"})?$format=json`);   
 	console.log(reqUrl);
 	} 
-         else if (fina_ar != null) {
-		console.log("exe fina_ar" + fina_ar);
-	reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval=${"'"+fina_ar+"'"})?$format=json`);   
+        // else if (fina_ar != null) {
+	//	console.log("exe fina_ar" + fina_ar);
+	//reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval=${"'"+fina_ar+"'"})?$format=json`);   
 	
-	}
-	console.log("CR data :- " +num);
+	//}
+	console.log("CR data num :- " +num);
 	console.log(reqUrl);
-	console.log("fina_ar  :- " + fina_ar)
-	console.log("APPROVE REJECT  :-" + appr_rej);
+	//console.log("fina_ar  :- " + fina_ar)
+	//console.log("APPROVE REJECT  :-" + appr_rej);
 	//end else if query cr number / activate cr
 	
 	
