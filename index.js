@@ -157,7 +157,7 @@ console.log(reqUrl + "outside switch");
 	     }
 		
 					
-	if (bt_resp.length > 1 || appr_reje.length > 1){ 
+	if (bt_resp.length > 1) { 
 	     return res.json( 
 				  { 
                 speech: botResponse,     
