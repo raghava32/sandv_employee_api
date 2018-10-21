@@ -190,7 +190,7 @@ console.log("dtype  after switch case:- "+ reqUrl);
         },
         {
             "platform": "google",
-            "title": num + "Change Request List",
+            "title": dtype + "Change Request List",
             "type": "list_card",
             "items": [
                 {
