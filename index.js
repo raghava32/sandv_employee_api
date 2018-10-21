@@ -23,6 +23,7 @@ const dtype = numb["crdata"];
 const quer = numb["number"];
 	console.log("dtype :- "+ dtype);
            console.log("entering into switch case" + dtype);
+	if (dtype != null){ 
 	switch (dtype) {
 		 
 	 case "cr data":
@@ -53,11 +54,15 @@ console.log("latest :- "+ reqUrl);
 			reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pend'&$format=json`);        
 			console.log("default");
 }// switch case
-console.log("dtype  after switch case:- "+ reqUrl);
+
+		
+	}
+	console.log("dtype  after switch case:- "+ reqUrl);
+console.log("checking quer");
 	if (quer != null) { 
 		console.log("else if exe");
 	    reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval='6021')?$format=json`);   
-	console.log(reqUrl);
+	console.log("quer url for data :- "+ reqUrl);
 	}//end else if query cr number / activate cr
 	
 	
