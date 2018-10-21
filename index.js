@@ -16,12 +16,12 @@ server.post('/assetdata', (req, res) => {
  let completeResponse = '';
    
    let botResponse = " ";
-	let reqUrl = "";
+	let reqUrl = " ";
 	let bt_resp = "";
 const numb = req.body.result.parameters;
 const dtype = numb["crdata"];
 const quer = numb["number"];
-	
+	console.log("dtype :- "+ dtype);
  switch(dtype) {
 	 case "cr data":
 	 case "change request data":
@@ -43,7 +43,7 @@ const quer = numb["number"];
       reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'prio'&$format=json`);   
         break;			
 }// switch case
-console.log(reqUrl);
+console.log("dtyoe :- "+ reqUrl);
 	if (quer != null) { 
 		console.log("else if exe");
 	    reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval='6021')?$format=json`);   
@@ -54,10 +54,9 @@ console.log(reqUrl);
     http.get(reqUrl, (responseFromAPI) => {
         console.log( "http Call :-  " + reqUrl);
         responseFromAPI.on('data', (chunk) => {
-            completeResponse += chunk;
-			
-            
+            completeResponse += chunk;    
         });
+	    
         responseFromAPI.on('end', () => {
             var JSONObj = JSON.parse(completeResponse);        
      
@@ -279,6 +278,7 @@ console.log(reqUrl);
     });
 });
 
+reqUrl = botResponse = bt_resp = numb = null;
 
 server.listen((process.env.PORT || 3000), () => {
     console.log("Server is up and running...");
