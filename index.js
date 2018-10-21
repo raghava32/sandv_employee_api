@@ -19,8 +19,11 @@ server.post('/assetdata', (req, res) => {
 	let reqUrl = " ";
 	let bt_resp = "";
 const numb = req.body.result.parameters;
+const res_query = req.body.result.resolvedQuery;	
 const dtype = numb["crdata"];
 const quer = numb["number"];
+	
+	console.log("resolvedQuery :- " + res_query);
 	console.log("dtype :- "+ dtype);
            console.log("entering into switch case" + dtype);
 	if (dtype != null){ 
