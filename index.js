@@ -58,10 +58,10 @@ console.log("latest :- "+ reqUrl);
 		
 	}
 	console.log("dtype  after switch case:- "+ reqUrl);
-console.log("checking quer");
+console.log("checking quer" + quer);
 	if (quer != null) { 
 		console.log("else if exe");
-	    reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval='6021')?$format=json`);   
+	    reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval=${"'"+quer+"'"})?$format=json`);   
 	console.log("quer url for data :- "+ reqUrl);
 	}//end else if query cr number / activate cr
 	
