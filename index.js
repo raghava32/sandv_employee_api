@@ -33,17 +33,22 @@ const quer = numb["number"];
 	reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$format=json`);          
              break;	
     case "pending cr":
+			console.log("pending :- "+ "enter");
       reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pend'&$format=json`);          
+			console.log("pending :- "+ reqUrl);
          break;
     case "latest cr":
       reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'late'&$format=json`);   
-        break;
+console.log("latest :- "+ reqUrl);
+			break;
     case "over due cr":
       reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'over'&$format=json`);   
-        break;	
+        console.log("over due :- "+ reqUrl);
+			break;	
     case "priority cr":
       reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'prio'&$format=json`);   
-        break;			
+        console.log("priority :- "+ reqUrl);
+			break;			
 }// switch case
 console.log("dtype  after switch case:- "+ reqUrl);
 	if (quer != null) { 
