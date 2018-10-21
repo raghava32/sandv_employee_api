@@ -48,7 +48,10 @@ console.log("latest :- "+ reqUrl);
     case "priority cr":
       reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'prio'&$format=json`);   
         console.log("priority :- "+ reqUrl);
-			break;			
+			break;		
+			default: 
+			reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pend'&$format=json`);        
+			console.log("default");
 }// switch case
 console.log("dtype  after switch case:- "+ reqUrl);
 	if (quer != null) { 
