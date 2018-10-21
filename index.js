@@ -74,9 +74,10 @@ const req_data = req.body.result.parameters;
         responseFromAPI.on('end', () => {
             var JSONObj = JSON.parse(completeResponse);        
      console.log(bt_resp);
+     console.log("num  " + num);		
 //switch(JSONObj) {
-		if (num != null) {
- if (JSONObj.d.results.length > 0) 
+		if (num != null && bt_resp == null) {
+            if (JSONObj.d.results.length > 0) 
           {
             for (var i = 0; i < JSONObj.d.results.length; i++) 
             {
