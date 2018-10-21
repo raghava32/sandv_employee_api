@@ -23,7 +23,7 @@ const dtype = numb["crdata"];
 const quer = numb["number"];
 	console.log("dtype :- "+ dtype);
  switch(dtype) {
-		 connsole.log("entered into switch case" + dtype);
+		 console.log("entered into switch case" + dtype);
 	 case "cr data":
 	 case "change request data":
 	 case "cr details":
