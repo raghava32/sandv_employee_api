@@ -13,7 +13,11 @@ server.use(bodyParser.json());
 
 server.post('/assetdata', (req, res) => {
   let cr_1,cr_2,cr_3,cr_4,cr_5,cr_1d,cr_2d,cr_3d,cr_4d,cr_5d;
- let completeResponse,botResponse,reqUrl,bt_resp,appr_reje;
+  let completeResponse = " ";
+ let botResponse = "";
+ let reqUrl = "";
+ let bt_resp = ""; 
+ let appr_reje = "";
    
    
 const req_data = req.body.result.parameters;
@@ -45,7 +49,7 @@ const req_data = req.body.result.parameters;
       reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'prio'&$format=json`);   
         break;			
 }// switch case
-console.log(reqUrl + "outside switch");
+
 	if (quer != null) { 
 		console.log("else if exe");
 	    reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval=${"'"+quer+"'"})?$format=json`);   
