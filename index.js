@@ -169,7 +169,7 @@ console.log("checking quer" + quer); //3418
 	     }
 		
 					
-	if (bt_resp.length > 1){ 
+	if (bt_resp.length > 1 || botResponse.includes("no data found")){ 
 	     return res.json( 
 				  { 
                 speech: botResponse,     
@@ -286,12 +286,6 @@ console.log("checking quer" + quer); //3418
 		
 		}
 			  
-		    
-		    
-		    
-	
-	    
-	  
         });
     }, (error) => {
         return res.json({
