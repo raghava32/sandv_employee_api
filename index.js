@@ -302,7 +302,7 @@ console.log("checking quer" + quer); //3418
     });
 });
 
-reqUrl = botResponse = bt_resp = numb = null;
+reqUrl = botResponse = bt_resp = numb = dtype = null;
 
 server.listen((process.env.PORT || 3000), () => {
     console.log("Server is up and running...");
