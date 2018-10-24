@@ -57,6 +57,12 @@ const quer = numb["number"];
 	
 }// switch case
 
+		
+		if dtype..includes("pending"){
+		reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pend'&$format=json`);          
+		} 
+		
+		
 console.log("!!!!!! requrl " + reqUrl);		
 	}
 	
