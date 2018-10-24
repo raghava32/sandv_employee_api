@@ -59,13 +59,13 @@ let quer = numb["number"];
 }// switch case
 
 		
-		if dtype.includes("pending") {
+		if "pending" == dtype.includes("pending") {
 		reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pend'&$format=json`);          
-		} else if dtype.includes("latest") {
+		} else if "latest" == dtype.includes("latest") {
 			reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'late'&$format=json`);   
-		} else if dtype.includes("over") {
+		} else if "over" == dtype.includes("over") {
 			reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'over'&$format=json`);   
-		} else if dtype.includes("priority") {
+		} else if "priority" == dtype.includes("priority") {
 			reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'prio'&$format=json`);   
 		}
 		
