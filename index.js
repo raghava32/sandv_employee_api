@@ -15,8 +15,8 @@ server.post('/assetdata', (req, res) => {
   let cr_1,cr_2,cr_3,cr_4,cr_5,cr_1d,cr_2d,cr_3d,cr_4d,cr_5d;
  let completeResponse = '';
    
-   let botResponse = " ";
-	let reqUrl = " ";
+   let botResponse = "";
+	let reqUrl = "";
 	let bt_resp = "";
 const numb = req.body.result.parameters;
 const res_query = req.body.result.resolvedQuery;	
@@ -36,28 +36,28 @@ const quer = numb["number"];
 	bt_resp = "please specifiy which type of cr data looking for. pending cr, latest cr, over due cr or priority cr";
 	reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$format=json`);          
              break;	
-    case "pending cr":
-			console.log("pending :- "+ "enter");
+    case 'pending cr':
+			
       reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pend'&$format=json`);          
-			console.log("pending :- "+ reqUrl);
+			
          break;
-    case "latest cr":
+    case 'latest cr':
       reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'late'&$format=json`);   
-console.log("latest :- "+ reqUrl);
+
 			break;
-    case "over due cr":
+    case 'over due cr':
       reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'over'&$format=json`);   
-        console.log("over due :- "+ reqUrl);
+
 			break;	
-    case "priority cr":
+    case 'priority cr':
       reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'prio'&$format=json`);   
-        console.log("priority :- "+ reqUrl);
+
 			break;		
 			
 	
 }// switch case
 
-		
+console.log("!!!!!! requrl " + reqUrl);		
 	}
 	
 console.log("checking quer" + quer); //3418
@@ -169,7 +169,7 @@ console.log("checking quer" + quer); //3418
 		  if (bt_resp.length > 1){
 		     botResponse = bt_resp;  
 		      }
-		if (botResponse == null)
+		if (botResponse == null || JSONObj.d.results.length < 0 )
 	     {				      
 		     botResponse = "no data found for the request";
 	     }
