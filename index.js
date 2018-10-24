@@ -177,7 +177,7 @@ console.log("checking quer" + quer); //3418
                      cr_4d =  "Net Weight:" + JSONObj.d.Ntgew + JSONObj.d.GeweiMat;
 		     cr_5 = "Gross Weight: " + JSONObj.d.Brgewmara + JSONObj.d.GeweiMat;
                      cr_5d = "Industry sector :" + JSONObj.d.Mbrsh
-      
+      botResponse = cr_1 + cr_2;
 			 console.log(cr_1 + cr_2);
 		  
 		  } //else if (quer.length >1) 
