@@ -100,7 +100,7 @@ console.log("checking quer" + quer); //3418
         console.log( "http Call :-  " + reqUrl);
         responseFromAPI.on('data', (chunk) => {
             completeResponse += chunk;    
-		console.log(completeResponse);
+		//console.log(completeResponse);
         });
 	    
         responseFromAPI.on('end', () => {
@@ -133,7 +133,7 @@ console.log("checking quer" + quer); //3418
 		     cr_4d = JSONObj.d.results[i].UsmdCreqText;
 				   break;
 		    case 4:		   
-                     cr_5 = JSONObj.d.results[i].UsmdCrequest;
+                     cr_5 = JSONObj.d.results[i].UsmdCrequest; 
 		     cr_5d = JSONObj.d.results[i].UsmdCreqText;
 				    break;
 		    }	
@@ -142,7 +142,8 @@ console.log("checking quer" + quer); //3418
 		}
 	    // for if condition if (num.length > 1) 
 		  //console.log("quer != null checking");
-		 if (quer != null && JSONObj.d.Zfval == null) {	  
+		
+		 if ((quer != null && !res_query.includes("approve")) || (quer != null && !res_query.includes("reject")) {	  
 	             cr_1 = "Material :" + JSONObj.d.Matnr;
 		     cr_1d = "Desc:" + JSONObj.d.Txtmi;
 	             cr_2 =  "Noun :" + JSONObj.d.NounName;
