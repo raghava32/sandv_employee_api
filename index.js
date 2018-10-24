@@ -58,7 +58,11 @@ let quer = numb["number"];
 	
 }// switch case
 	*/	
-	 if (dtype == "cr data" || dtype == "change request data" ||  dtype == "cr details" || dtype == "change request details" )
+	 
+	
+	if (dtype != null) { 
+	
+	if (dtype == "cr data" || dtype == "change request data" ||  dtype == "cr details" || dtype == "change request details" )
 	 {
 		 
 		 bt_resp = "please specifiy which type of cr data looking for. pending cr, latest cr, over due cr or priority cr";
@@ -79,6 +83,9 @@ let quer = numb["number"];
 		} else if (dtype.includes("priority")) {
 			reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'prio'&$format=json`);   
 		}
+	
+	
+	}
 	
 		
 console.log("!!!!!! requrl " + reqUrl);		
