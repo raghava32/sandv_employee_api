@@ -81,6 +81,7 @@ console.log("checking quer" + quer); //3418
         console.log( "http Call :-  " + reqUrl);
         responseFromAPI.on('data', (chunk) => {
             completeResponse += chunk;    
+		console.log(completeResponse);
         });
 	    
         responseFromAPI.on('end', () => {
