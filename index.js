@@ -163,10 +163,11 @@ console.log("checking quer" + quer); //3418
 	  }	    
 		}
 	    // for if condition if (num.length > 1) 
-		  //console.log("quer != null checking");
+		  console.log("quer != null checking " + quer);
 		
 		 if (quer != null) {	  
-	             cr_1 = "Material :" + JSONObj.d.Matnr;
+	          console.log("quer != null checking passed");
+		     cr_1 = "Material :" + JSONObj.d.Matnr;
 		     cr_1d = "Desc:" + JSONObj.d.Txtmi;
 	             cr_2 =  "Noun :" + JSONObj.d.NounName;
 		     cr_2d = "Modifier :" + JSONObj.d.ModiName;   
