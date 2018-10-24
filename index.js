@@ -186,10 +186,10 @@ console.log("checking quer" + quer); //3418
 		}
 			
              
-		  if (bt_resp.length > 1){
+		  if (bt_resp.length > 1) {
 		     botResponse = bt_resp;  
 		      }
-		if (botResponse == null || JSONObj.d.results.length < 0 )
+		if (botResponse == null)
 	     {				      
 		     botResponse = "no data found for the request";
 	     }
