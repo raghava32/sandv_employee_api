@@ -123,7 +123,7 @@ console.log("checking quer" + quer); //3418
 		}
 	    // for if condition if (num.length > 1) 
 		  //console.log("quer != null checking");
-		 if (quer != null && (!res_query.includes("approve") || !res_query.includes("reject"))) {	  
+		 if (quer != null && JSONObj.d.Matnr != null) {	  
 	             cr_1 = "Material :" + JSONObj.d.Matnr;
 		     cr_1d = "Desc:" + JSONObj.d.Txtmi;
 	             cr_2 =  "Noun :" + JSONObj.d.NounName;
