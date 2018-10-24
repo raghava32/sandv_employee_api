@@ -62,26 +62,33 @@ let quer = numb["number"];
 	console.log("dtype null checkinhg" );
 	if (dtype != null) { 
 	
+		console.log("null sucess");
 	if (dtype == "cr data" || dtype == "change request data" ||  dtype == "cr details" || dtype == "change request details" )
 	 {
 		 
 		 bt_resp = "please specifiy which type of cr data looking for. pending cr, latest cr, over due cr or priority cr";
 	reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$format=json`);          
+		 console.log("cradta if condition");
 	 }
 		
 		if (dtype == "pending cr") {
 		reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pend'&$format=json`);          
+			console.log("pending if condition");
+		
 		}
-
 		
 		if (dtype.includes("pending")) {
 		reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pend'&$format=json`);          
+	
 		} else if (dtype.includes("latest")) {
 			reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'late'&$format=json`);   
+			console.log("latest if condition");
 		} else if (dtype.includes("over")) {
 			reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'over'&$format=json`);   
+			console.log("over if condition");
 		} else if (dtype.includes("priority")) {
 			reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'prio'&$format=json`);   
+			console.log("priority if condition");
 		}
 	
 	
