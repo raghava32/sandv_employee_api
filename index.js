@@ -183,6 +183,8 @@ console.log("checking quer" + quer); //3418
 		  } //else if (quer.length >1) 
 		  
 		     
+		console.log("approve rej condition check")
+		
 		     if (res_query.includes("approve") || res_query.includes("reject") ){
 		 
 			     console.log("@@@in approve or rej condition" + JSONObj.d.Zfval);
@@ -212,16 +214,19 @@ console.log("checking quer" + quer); //3418
 		cr_4d = "no data";	
 		}
 			
-             
+             console.log("bt_resp length >1");
 		  if (bt_resp.length > 1) {
 		     botResponse = bt_resp;  
 		      }
+		console.log(" bot response null");
 		if (botResponse == null)
 	     {				      
 		     botResponse = "no data found for the request";
 	     }
 		
+		console.log("final check");
 					
+		
 	if (bt_resp.length > 1 || botResponse.includes("no data found") || res_query.includes("approve") || res_query.includes("reject") ){ 
 	     return res.json( 
 				  { 
