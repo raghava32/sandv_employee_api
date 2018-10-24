@@ -60,6 +60,8 @@ const quer = numb["number"];
 console.log("!!!!!! requrl " + reqUrl);		
 	}
 	
+	
+	
 console.log("checking quer" + quer); //3418
 	if (quer != null) { 
 		
