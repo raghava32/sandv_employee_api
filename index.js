@@ -264,7 +264,7 @@ console.log("checking quer" + quer); //3418
         },
         {
             "platform": "google",
-            "title": dtype + "Change Request List",
+            "title":  "Change Request List",
             "type": "list_card",
             "items": [
                 {
