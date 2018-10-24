@@ -82,7 +82,7 @@ let quer = numb["number"];
 	
 		
 console.log("!!!!!! requrl " + reqUrl);		
-	}
+	//}
 	
 	
 	
