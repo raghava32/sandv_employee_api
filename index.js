@@ -225,6 +225,7 @@ console.log("checking quer" + quer); //3418
 	     }
 		
 		console.log("final check");
+		console.log(botResponse);
 					
 		
 	if (bt_resp.length > 1 || botResponse.includes("no data found") || res_query.includes("approve") || res_query.includes("reject") ){ 
@@ -237,6 +238,7 @@ console.log("checking quer" + quer); //3418
                               );	
 		}
 		else{
+			console.log("response final executing");
 		return res.json( 
                               
 {
