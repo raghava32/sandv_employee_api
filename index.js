@@ -92,6 +92,7 @@ console.log("checking quer" + quer); //3418
 		
 		
 	    reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval=${"'"+res_query+"'"})?$format=json`);   
+	quer = null;
 	}
 	
 	
@@ -143,7 +144,7 @@ console.log("checking quer" + quer); //3418
 	    // for if condition if (num.length > 1) 
 		  //console.log("quer != null checking");
 		
-		 if ((quer != null && !res_query.includes("approve")) || (quer != null && !res_query.includes("reject"))) {	  
+		 if (quer != null) {	  
 	             cr_1 = "Material :" + JSONObj.d.Matnr;
 		     cr_1d = "Desc:" + JSONObj.d.Txtmi;
 	             cr_2 =  "Noun :" + JSONObj.d.NounName;
