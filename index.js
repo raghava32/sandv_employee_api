@@ -59,21 +59,21 @@ let quer = numb["number"];
 }// switch case
 		
 		
-		if dtype == "pending cr"{
+		if (dtype == "pending cr") {
 		reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pend'&$format=json`);          
 		}
 
-	/*	
-		if "pending" == dtype.includes("pending") {
+		
+		if (dtype.includes("pending")) {
 		reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pend'&$format=json`);          
-		} else if "latest" == dtype.includes("latest") {
+		} else if (dtype.includes("latest")) {
 			reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'late'&$format=json`);   
-		} else if "over" == dtype.includes("over") {
+		} else if (dtype.includes("over")) {
 			reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'over'&$format=json`);   
-		} else if "priority" == dtype.includes("priority") {
+		} else if (dtype.includes("priority")) {
 			reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'prio'&$format=json`);   
 		}
-	*/	
+	
 		
 console.log("!!!!!! requrl " + reqUrl);		
 	}
