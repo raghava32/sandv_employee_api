@@ -123,8 +123,7 @@ console.log("checking quer" + quer); //3418
 		}
 	    // for if condition if (num.length > 1) 
 		  //console.log("quer != null checking");
-		 if (quer != null)  {	  
-			  console.log("quer null passed");
+		 if (quer != null && (!quer.includes("approve") || (!quer.includes("reject")))  {	  
 	             cr_1 = "Material :" + JSONObj.d.Matnr;
 		     cr_1d = "Desc:" + JSONObj.d.Txtmi;
 	             cr_2 =  "Noun :" + JSONObj.d.NounName;
@@ -139,6 +138,13 @@ console.log("checking quer" + quer); //3418
 		  
 		  } //else if (quer.length >1) 
 		  
+		     
+		     if (res_query.includes("approve") || res_query.includes("reject") ){
+		 
+		        botResponse = JSONObj.d.Zfval;
+		 
+		 }
+		
           
 		
 		
@@ -170,7 +176,7 @@ console.log("checking quer" + quer); //3418
 	     }
 		
 					
-	if (bt_resp.length > 1 || botResponse.includes("no data found")){ 
+	if (bt_resp.length > 1 || botResponse.includes("no data found") || res_query.includes("approve") || res_query.includes("reject") ){ 
 	     return res.json( 
 				  { 
                 speech: botResponse,     
