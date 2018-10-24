@@ -59,7 +59,7 @@ let quer = numb["number"];
 }// switch case
 	*/	
 	 
-	
+	console.log("dtype null checkinhg" );
 	if (dtype != null) { 
 	
 	if (dtype == "cr data" || dtype == "change request data" ||  dtype == "cr details" || dtype == "change request details" )
@@ -87,8 +87,9 @@ let quer = numb["number"];
 	
 	}
 	
-		
-console.log("!!!!!! requrl " + reqUrl);		
+	console.log("dtype null finished");
+	console.log(requrl);
+
 	//}
 	
 	
