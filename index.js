@@ -20,7 +20,7 @@ server.post('/assetdata', (req, res) => {
 	let bt_resp = "";
 const numb = req.body.result.parameters;
 const res_query = req.body.result.resolvedQuery;	
-const dtype = numb["crdata"];
+let dtype = numb["crdata"];
 const quer = numb["number"];
 	
 	console.log("resolvedQuery :- " + res_query);
