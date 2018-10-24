@@ -18,10 +18,10 @@ server.post('/assetdata', (req, res) => {
    let botResponse = "";
 	let reqUrl = "";
 	let bt_resp = "";
-const numb = req.body.result.parameters;
-const res_query = req.body.result.resolvedQuery;	
+let numb = req.body.result.parameters;
+let res_query = req.body.result.resolvedQuery;	
 let dtype = numb["crdata"];
-const quer = numb["number"];
+let quer = numb["number"];
 	
 	console.log("resolvedQuery :- " + res_query);
 	console.log("dtype :- "+ dtype);
