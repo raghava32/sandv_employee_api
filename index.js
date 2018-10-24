@@ -26,7 +26,7 @@ let quer = numb["number"];
 	console.log("resolvedQuery :- " + res_query);
 	console.log("dtype :- "+ dtype);
         
-	if (dtype != null){ 
+	/*
 	switch (dtype) {
 		 
 	 case "cr data":
@@ -57,7 +57,13 @@ let quer = numb["number"];
 	
 	
 }// switch case
-		
+	*/	
+	 if (dtype == "cr data" || dtype == "change request data" ||  dtype == "cr details" || dtype == "change request details" )
+	 {
+		 
+		 bt_resp = "please specifiy which type of cr data looking for. pending cr, latest cr, over due cr or priority cr";
+	reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$format=json`);          
+	 }
 		
 		if (dtype == "pending cr") {
 		reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pend'&$format=json`);          
