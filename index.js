@@ -53,8 +53,7 @@ console.log("latest :- "+ reqUrl);
       reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'prio'&$format=json`);   
         console.log("priority :- "+ reqUrl);
 			break;		
-			default: 
-			reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/CRequestSet?$filter= Zfval eq 'pend'&$format=json`);        
+			
 	
 }// switch case
 
@@ -123,7 +122,7 @@ console.log("checking quer" + quer); //3418
 		}
 	    // for if condition if (num.length > 1) 
 		  //console.log("quer != null checking");
-		 if (quer != null && JSONObj.d.Matnr.length > 1 ) {	  
+		 if (quer != null && JSONObj.d.Zfval.length < 1 ) {	  
 	             cr_1 = "Material :" + JSONObj.d.Matnr;
 		     cr_1d = "Desc:" + JSONObj.d.Txtmi;
 	             cr_2 =  "Noun :" + JSONObj.d.NounName;
