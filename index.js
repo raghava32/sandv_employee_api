@@ -95,7 +95,7 @@ let quer = numb["number"];
 	}
 	
 	console.log("dtype null finished");
-	console.log(requrl);
+	console.log(reqUrl);
 
 	//}
 	
