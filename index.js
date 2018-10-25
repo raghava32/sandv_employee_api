@@ -230,11 +230,50 @@ console.log("checking quer" + quer); //3418
 		
 	if (bt_resp.length > 1 || botResponse.includes("no data found") || res_query.includes("approve") || res_query.includes("reject") ){ 
 	     return res.json( 
-				  { 
-                speech: botResponse,     
-                displayText: botResponse,
-                source: 'webhook-echo-sample'
-            }
+			{
+    "conversationToken": "",
+    "expectUserResponse": true,
+    "expectedInputs": [
+        {
+            "inputPrompt": {
+                "richInitialPrompt": {
+                    "items": [
+                        {
+                            "simpleResponse": {
+                                "textToSpeech": "Howdy! I can get you change request details about almost any type. What type do you have in mind?",
+                                "displayText": "Howdy! I can tell you fun facts about almost any CR. What type CR do you have in mind?"
+                            }
+                        }
+                    ],
+                    "suggestions": [
+                        {
+                            "title": "pending cr"
+                        },
+                        {
+                            "title": "priority cr"
+                        },
+                        {
+                            "title": "over due cr"
+                        },
+                        {
+                            "title": "latest cr"
+                        }
+                    ]
+                }
+            },
+            "possibleIntents": [
+                {
+                    "intent": "actions.intent.TEXT"
+                }
+            ]
+        }
+    ]
+}	  
+		     
+		     
+		     
+		     
+		     
                               );	
 		}
 		else{
