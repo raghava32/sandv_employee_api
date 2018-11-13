@@ -229,7 +229,7 @@ console.log("checking quer" + quer); //3418
 		console.log(botResponse);
 					
 		
-	if (bt_resp.length > 1 || botResponse.includes("no data found") || res_query.includes("approved") || res_query.includes("rejected") ){ 
+	if (bt_resp.length > 1 || botResponse.includes("no data found") || res_query.includes("Approved") || res_query.includes("Rejected") ){ 
 	  console.log("if condition eexecution on result json");
 		return res.json( 
 			{
