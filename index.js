@@ -236,7 +236,16 @@ console.log("checking quer" + quer); //3418
 		console.log("res_query " + res_query);
 					
 		
-	if (bt_resp.length > 1 || botResponse.includes("no data found")) { 
+		if (res_query.includes("approve") || res_query.includes("reject") ){
+			return res.json({
+    speech: botResponse,
+    displayText: botResponse,
+    source: "webhook-echo-sample"
+  });
+		
+		}
+		
+	elseif (bt_resp.length > 1 || botResponse.includes("no data found")) { 
 	  console.log("if condition eexecution on result json");
 		return res.json( 
 			{
