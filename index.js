@@ -113,7 +113,8 @@ console.log("checking quer" + quer); //3418
 		
 		
 	    reqUrl = encodeURI(`http://80.227.35.222:50000/sap/opu/odata/SAP/ZMDG_TAXNMY_BOT_SRV/taxonmySet(Zfval=${"'"+res_query+"'"})?$format=json`);   
-	quer = null;
+	console.log("quer url for approve rej :- "+ reqUrl);
+		quer = null;
 	}
 	
 	
