@@ -166,7 +166,7 @@ console.log("checking quer" + quer); //3418
 		  console.log("quer != null checking " + quer);
 		
 		 if (quer != null) {	
-			 if (!res_query.includes("Approved") || !res_query.includes("Rejected")) {
+			
 	          console.log("quer != null checking passed");
 			 //if (JSONObj.d.Matnr > 0){
 		     cr_1 = "Material :" + JSONObj.d.Matnr;
@@ -181,14 +181,14 @@ console.log("checking quer" + quer); //3418
                      cr_5d = "Industry sector :" + JSONObj.d.Mbrsh
       botResponse = cr_1 + cr_2;
 			 console.log(cr_1 + cr_2);
-			 }
+			 
 			 //}
 		  } //else if (quer.length >1) 
 		  
 		     
 		console.log("approve rej condition check")
 		
-		     if (res_query.includes("approved") || res_query.includes("rejected") ){
+		     if (res_query.includes("approve") || res_query.includes("reject") ){
 		 
 			     console.log("@@@in approve or rej condition" + JSONObj.d.Zfval);
 		        botResponse = JSONObj.d.Zfval;
