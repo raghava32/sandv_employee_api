@@ -166,8 +166,8 @@ console.log("checking quer" + quer); //3418
 		  console.log("quer != null checking " + quer);
 		
 		 if (quer != null) {	
-			 console.log (JSONObj);
-			 console.log (JSONObj.d);
+			 console.log ("rag" + JSONObj );
+			 console.log ("obj .d" + JSONObj.d);
 		
 		   if (JSONObj.d.Matnr != 'undefined' )	{
 	          console.log("quer != null checking passed");
@@ -283,7 +283,7 @@ console.log("checking quer" + quer); //3418
 		     
                               );	
 		}
-		else{
+		elseif (cr_1.length > 0 ){
 			console.log("response final executing");
 		return res.json( 
                               
@@ -389,6 +389,14 @@ console.log("checking quer" + quer); //3418
 							  
 							  
 			  );	
+			
+			
+			else{
+	 source: 'webhook-echo-sample',
+    "speech": botResponse
+				
+			}
+			
 		
 		}
 			  
