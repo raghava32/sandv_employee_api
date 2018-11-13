@@ -192,7 +192,7 @@ console.log("checking quer" + quer); //3418
 		console.log("approve rej condition check")
 		
 		     if (res_query.includes("approve") || res_query.includes("reject") ){
-		 
+		                       console.log(JSONObj.d);
 			     console.log("@@@in approve or rej condition" + JSONObj.d.Zfval);
 		        botResponse = JSONObj.d.Zfval;
 			     console.log(JSONObj.d.Zfval);
