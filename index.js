@@ -245,7 +245,7 @@ console.log("checking quer" + quer); //3418
 		
 		}
 		
-	elseif (bt_resp.length > 1 || botResponse.includes("no data found")) { 
+	else if (bt_resp.length > 1 || botResponse.includes("no data found")) { 
 	  console.log("if condition eexecution on result json");
 		return res.json( 
 			{
