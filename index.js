@@ -235,7 +235,7 @@ console.log("checking quer" + quer); //3418
 		console.log("res_query " + res_query);
 					
 		
-	if (bt_resp.length > 1 || botResponse.includes("no data found") || res_query.includes("Approved") || res_query.includes("Rejected") ) { 
+	if (bt_resp.length > 1 || botResponse.includes("no data found") || res_query.includes("approve") || res_query.includes("reject") ) { 
 	  console.log("if condition eexecution on result json");
 		return res.json( 
 			{
