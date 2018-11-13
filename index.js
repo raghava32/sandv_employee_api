@@ -166,6 +166,9 @@ console.log("checking quer" + quer); //3418
 		  console.log("quer != null checking " + quer);
 		
 		 if (quer != null) {	
+			 console.log (JSONObj);
+			 console.log (JSONObj.d);
+		
 		   if (JSONObj.d.Matnr != 'undefined' )	{
 	          console.log("quer != null checking passed");
 			 //if (JSONObj.d.Matnr > 0){
