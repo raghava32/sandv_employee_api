@@ -166,7 +166,7 @@ console.log("checking quer" + quer); //3418
 		  console.log("quer != null checking " + quer);
 		
 		 if (quer != null) {	
-			
+		   if (JSONObj.d.Matnr.length > 0 )	
 	          console.log("quer != null checking passed");
 			 //if (JSONObj.d.Matnr > 0){
 		     cr_1 = "Material :" + JSONObj.d.Matnr;
@@ -181,7 +181,7 @@ console.log("checking quer" + quer); //3418
                      cr_5d = "Industry sector :" + JSONObj.d.Mbrsh
       botResponse = cr_1 + cr_2;
 			 console.log(cr_1 + cr_2);
-			 
+		 }
 			 //}
 		  } //else if (quer.length >1) 
 		  
