@@ -169,7 +169,7 @@ console.log("checking quer" + quer); //3418
 			 console.log ("rag" + JSONObj );
 			 console.log ("obj .d" + JSONObj.d);
 		
-		   if (JSONObj.d.Matnr != 'undefined' )	{
+		   if (JSONObj.d != 'undefined' )	{
 	          console.log("quer != null checking passed");
 			 //if (JSONObj.d.Matnr > 0){
 		     cr_1 = "Material :" + JSONObj.d.Matnr;
