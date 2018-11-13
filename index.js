@@ -286,7 +286,7 @@ console.log("checking quer" + quer); //3418
                               );	
 		}
 		
-		elseif ( botResponse.includes("Approved") || botResponse.includes(Rejected") ) {
+		elseif (botResponse.includes("Approved") || botResponse.includes(Rejected")) {
                  return res.json({
     speech: botResponse,
     displayText: botResponse,
