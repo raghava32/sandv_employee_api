@@ -286,11 +286,10 @@ console.log("checking quer" + quer); //3418
                               );	
 		}
 		
-		elseif (botResponse.includes("Approved") || botResponse.includes(Rejected")) {
+		elseif ( res_query.includes("approve") || res_query.includes("reject") ) {
                  return res.json({
-    speech: botResponse,
-    displayText: botResponse,
-    source: "webhook-echo-sample"
+        source: 'webhook-echo-sample',
+    "speech": botResponse
   });										   
 			
 		}
