@@ -285,6 +285,16 @@ console.log("checking quer" + quer); //3418
 		     
                               );	
 		}
+		
+		else if ( botResponse.includes("Approved") || botResponse.includes(Rejected")  ) {
+                 return res.json({
+    speech: botResponse,
+    displayText: botResponse,
+    source: "webhook-echo-sample"
+  });										   
+			
+		}
+		
 		else {
 			console.log("response final executing");
 		return res.json( 
