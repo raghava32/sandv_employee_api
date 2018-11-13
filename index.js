@@ -232,6 +232,7 @@ console.log("checking quer" + quer); //3418
 		
 		console.log("final check");
 		console.log(botResponse);
+		console.log("res_query " + res_query);
 					
 		
 	if (bt_resp.length > 1 || botResponse.includes("no data found") || res_query.includes("Approved") || res_query.includes("Rejected") ){ 
@@ -283,7 +284,7 @@ console.log("checking quer" + quer); //3418
 		     
                               );	
 		}
-		elseif (cr_1.length > 0 ){
+		else {
 			console.log("response final executing");
 		return res.json( 
                               
@@ -391,11 +392,7 @@ console.log("checking quer" + quer); //3418
 			  );	
 			
 			
-			else{
-	 source: 'webhook-echo-sample',
-    "speech": botResponse
-				
-			}
+
 			
 		
 		}
