@@ -258,8 +258,8 @@ console.log("checking quer" + quer); //3418
                     "items": [
                         {
                             "simpleResponse": {
-                                "textToSpeech": "Howdy! I can get you change request details about almost any type. What type do you have in mind?",
-                                "displayText": "Howdy! I can tell you fun facts about almost any CR. What type CR do you have in mind?"
+                                "textToSpeech": "Howdy! I can get you Change Request details about almost any type. What type of CR do you have in mind?",
+                                "displayText": "Howdy! I can get almost any Chanage Request. What type CR do you have in mind?"
                             }
                         }
                     ],
